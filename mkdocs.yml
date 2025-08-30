@@ -1,0 +1,8 @@
+site_name: Learn zkSNARK
+
+theme:
+  name: 'material'
+
+nav:
+  - 首页: index.md
+  - 关于: about.md
