@@ -1,8 +1,58 @@
-site_name: Learn zkSNARK
+# Project Information
+site_name: zkSNARK wiki
+site_description: A wiki for zkSNARKs
+site_author: louhc
+site_url: https://zksnark-wiki.github.io
+strict: true
 
+# Repository
+repo_name: 'zksnark-wiki/zksnark-wiki.github.io'
+repo_url: 'https://github.com/zksnark-wiki/zksnark-wiki.github.io'
+edit_uri: 'blob/main/docs/'
+
+# Copyright
+copyright: 'none'
+
+# Contents
+nav:
+  - zkSNARK-wiki:
+    - 主页: index.md
+    - 关于: about.md
+  - Commitment:
+    - Commitment: commitment/index.md
+    - Pedersen Commitment: commitment/pedersen.md
+  - PCS:
+    - PCS: pcs/index.md
+    - KZG Commitment: pcs/kzg.md
+    - IPA Commitment: pcs/ipa.md
+  
+# Theme
 theme:
   name: 'material'
+  language: 'zh'
+  palette:
+    primary: 'white'
+    accent: 'pink'
+  include_search_page: false
+  search_index_only: true
+  favicon: 'favicon.ico'
 
-nav:
-  - 首页: index.md
-  - 关于: about.md
+  # logo:
+  #   icon: 'louhc'
+  features:
+    - navigation.tabs
+
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
+
+# Extensions
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
