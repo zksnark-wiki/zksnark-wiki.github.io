@@ -12,13 +12,13 @@
         <meta name="author" content="louhc">
       
       
-        <link rel="canonical" href="https://zksnark-wiki.github.io/about/">
+        <link rel="canonical" href="https://zksnark-wiki.github.io/contri/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../contri/">
+        <link rel="next" href="../commitment/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>About - zkSNARK wiki</title>
+        <title>Contributing - zkSNARK wiki</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#zksnark-wiki-contribution-guide" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              Contributing
             
           </span>
         </div>
@@ -364,17 +369,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -385,7 +383,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -395,10 +392,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../contri/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -409,6 +428,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -649,6 +706,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -667,9 +752,26 @@
   
 
 
-  <h1>About</h1>
-
-
+<h1 id="zksnark-wiki-contribution-guide">zkSNARK Wiki: Contribution Guide<a class="headerlink" href="#zksnark-wiki-contribution-guide" title="Permanent link">&para;</a></h1>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Clone the repository: <code>git clone https://github.com/zksnark-wiki/zksnark-wiki.github.io.git</code></li>
+<li>Install MkDocs: <code>pip install mkdocs</code></li>
+<li>Install the Material for MkDocs theme: <code>pip install mkdocs-material</code></li>
+</ol>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create a new Markdown (<code>.md</code>) file in the <strong><code>docs</code></strong> directory and write your content.</li>
+<li>Integrate your new page into the navigation by editing <code>mkdocs.yml</code></li>
+<li>Preview your changes locally with <code>mkdocs serve</code>.</li>
+<li>Commit your updates to Git:<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m "Add new post about X"</code></li>
+<li><code>git push</code></li>
+</ul>
+</li>
+<li>Deploy the site to GitHub Pages: <code>mkdocs gh-deploy --force</code></li>
+</ol>
 
 
 
