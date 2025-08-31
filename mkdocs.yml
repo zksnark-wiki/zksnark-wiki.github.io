@@ -16,8 +16,9 @@ copyright: 'none'
 # Contents
 nav:
   - zkSNARK-wiki:
-    - 主页: index.md
-    - 关于: about.md
+    - zkSNARK-wiki: index.md
+    - About: about.md
+    - Contributing: contri.md
   - Commitment:
     - Commitment: commitment/index.md
     - Pedersen Commitment: commitment/pedersen.md
