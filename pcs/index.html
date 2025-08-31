@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#polynomial-commitment-scheme" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -561,6 +566,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PCS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -573,6 +593,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-polynomial-commitment-schemes-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Polynomial Commitment Schemes (PCS)?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Polynomial Commitment Schemes (PCS)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Good PCS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#univariant-and-multilinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariant and Multilinear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-pcs-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular PCS Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular PCS Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kzg-kate-zaverucha-goldberg-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      KZG (Kate-Zaverucha-Goldberg) Commitments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipa-inner-product-argument-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPA (Inner Product Argument) Commitments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -649,6 +754,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-polynomial-commitment-schemes-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Polynomial Commitment Schemes (PCS)?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Polynomial Commitment Schemes (PCS)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Good PCS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#univariant-and-multilinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Univariant and Multilinear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-pcs-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular PCS Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular PCS Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kzg-kate-zaverucha-goldberg-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      KZG (Kate-Zaverucha-Goldberg) Commitments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipa-inner-product-argument-commitments" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPA (Inner Product Argument) Commitments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -667,9 +848,46 @@
   
 
 
-  <h1>PCS</h1>
-
-
+<h1 id="polynomial-commitment-scheme">Polynomial Commitment Scheme<a class="headerlink" href="#polynomial-commitment-scheme" title="Permanent link">&para;</a></h1>
+<h2 id="what-are-polynomial-commitment-schemes-pcs">What Are Polynomial Commitment Schemes (PCS)?<a class="headerlink" href="#what-are-polynomial-commitment-schemes-pcs" title="Permanent link">&para;</a></h2>
+<p>Imagine you're a magician who wants to prove you know a secret polynomial—a long, complicated mathematical equation—without revealing what it is. You want to convince someone that your polynomial, when evaluated at a specific number, equals a certain value. But there's a catch: you can only send them a tiny, fixed-size proof.</p>
+<p>This is the essence of a <strong>Polynomial Commitment Scheme (PCS)</strong>. It's a cryptographic primitive that lets a prover "commit" to a polynomial in a way that is both <strong>succinct</strong> and <strong>secure</strong>.</p>
+<p>In simpler terms, a PCS is a powerful tool with three main steps:</p>
+<ol>
+<li><strong>Commit:</strong> You take a polynomial, <span class="arithmatex">\(P(x)\)</span>, and generate a short, cryptographic representation of it. This is the <strong>commitment</strong>. Think of it as a fingerprint for the polynomial. You can share this fingerprint with anyone without revealing the polynomial's coefficients.</li>
+<li><strong>Open:</strong> Later, someone gives you a challenge: "What's the value of your polynomial at point <span class="arithmatex">\(z\)</span>?" You respond with the value, <span class="arithmatex">\(v = P(z)\)</span>, and a very small <strong>proof</strong> <span class="arithmatex">\(\pi\)</span>.</li>
+<li><strong>Verify:</strong> The verifier uses your original commitment, the point <span class="arithmatex">\(z\)</span>, the claimed value <span class="arithmatex">\(v\)</span>, and your proof <span class="arithmatex">\(\pi\)</span> to check if everything is correct. The amazing part? They can do this in a fraction of a second, without ever seeing the polynomial itself.</li>
+</ol>
+<h3 id="what-makes-a-good-pcs">What Makes a Good PCS?<a class="headerlink" href="#what-makes-a-good-pcs" title="Permanent link">&para;</a></h3>
+<p>Not all schemes are created equal. A high-quality PCS should have these properties:</p>
+<ul>
+<li><strong>Succinctness:</strong> The commitment and the proof must be extremely small, regardless of how large the polynomial is. This is what makes it practical.</li>
+<li><strong>Binding:</strong> Once you commit to a polynomial, you can't change your mind. It's impossible to "open" the commitment to a different polynomial.</li>
+<li><strong>Hiding:</strong> The commitment should not reveal any information about the polynomial's coefficients.</li>
+</ul>
+<h3 id="univariant-and-multilinear">Univariant and Multilinear<a class="headerlink" href="#univariant-and-multilinear" title="Permanent link">&para;</a></h3>
+<p>Polynomials come in different forms, and PCS are often classified by the type they are designed for. For most use cases, we need either a <strong>univariant PCS</strong> or a <strong>multilinear PCS</strong>.</p>
+<ul>
+<li>
+<p><strong>Univariant Polynomials:</strong> These are the polynomials involving only a single variable, like <span class="arithmatex">\(P(x) = 5x^3 + 2x - 1\)</span>. Many popular schemes, including <strong>KZG</strong>, are designed for these single-variable polynomials.</p>
+</li>
+<li>
+<p><strong>Multilinear Polynomials:</strong> A multilinear polynomial is a special type of polynomial with multiple variables, where each variable appears with a power of at most 1. They are often used to represent logical circuits or computations. Schemes like the <strong>FRI</strong> are designed to handle these types of polynomials efficiently.</p>
+</li>
+</ul>
+<hr />
+<h2 id="popular-pcs-examples">Popular PCS Examples<a class="headerlink" href="#popular-pcs-examples" title="Permanent link">&para;</a></h2>
+<p>There are a few widely-used PCS, each with its own trade-offs. The main difference often comes down to their efficiency and whether they need a <strong>trusted setup</strong>. A trusted setup is a one-time cryptographic event that generates public parameters. If this event is compromised, the entire system's security can be at risk.</p>
+<h3 id="kzg-kate-zaverucha-goldberg-commitments"><strong>KZG (Kate-Zaverucha-Goldberg) Commitments</strong><a class="headerlink" href="#kzg-kate-zaverucha-goldberg-commitments" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pros:</strong> They are incredibly efficient. Both the proof size and the verification time are constant, meaning they stay the same no matter how large the polynomial is.</li>
+<li><strong>Cons:</strong> They require a trusted setup. This has led to high-profile ceremonies like the one for the Zcash network, where many people participate to ensure no single party holds the secret.</li>
+</ul>
+<h3 id="ipa-inner-product-argument-commitments"><strong>IPA (Inner Product Argument) Commitments</strong><a class="headerlink" href="#ipa-inner-product-argument-commitments" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pros:</strong> They do <strong>not</strong> require a trusted setup, which is a massive security benefit. They rely on more common cryptographic assumptions.</li>
+<li><strong>Cons:</strong> They are less efficient than KZG. The proof size and verification time grow logarithmically with the size of the polynomial, which is still very fast but not constant.</li>
+</ul>
 
 
 
