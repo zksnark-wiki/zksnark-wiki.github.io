@@ -8,11 +8,12 @@
 
 ## Workflow
 
-1.  Create a new Markdown (`.md`) file in the **`docs`** directory and write your content.
-2.  Integrate your new page into the navigation by editing `mkdocs.yml`
-3.  Preview your changes locally with `mkdocs serve`.
-4.  Commit your updates to Git:
+1.  Remember to pull and merge.
+2.  Create a new Markdown (`.md`) file in the **`docs`** directory and write your content.
+3.  Integrate your new page into the navigation by editing `mkdocs.yml`
+4.  Preview your changes locally with `mkdocs serve`.
+5.  Commit your updates to Git:
     -   `git add .`
     -   `git commit -m "Add new post about X"`
     -   `git push`
-5.  Deploy the site to GitHub Pages: `mkdocs gh-deploy --force`
+6.  Deploy the site to GitHub Pages: `mkdocs gh-deploy --force`
