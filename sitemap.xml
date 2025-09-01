@@ -2,34 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zksnark-wiki.github.io/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/about/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/contri/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/commitment/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/commitment/pedersen/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/drafts/libra/</loc>
+         <lastmod>2025-09-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/drafts/virgo/</loc>
+         <lastmod>2025-09-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/drafts/virgopp/</loc>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/ipa/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/kzg/</loc>
-         <lastmod>2025-08-31</lastmod>
+         <lastmod>2025-09-01</lastmod>
     </url>
 </urlset>
