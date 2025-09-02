@@ -14,7 +14,7 @@ The process of a KZG commitment can be broken down into four distinct phases:
 
 As mentioned, this is a one-time ceremony that generates the public parameters (the SRS) which are then used by everyone. The SRS consists of points on a pairing-friendly elliptic curve, such as $[1]_\mathbb{G_1}, [\tau]_\mathbb{G_1}, [\tau^2]_\mathbb{G_1}, \dots, [\tau^d]_\mathbb{G_1}$ where $d$ is the maximum degree of any polynomial to be committed to, and $[x]_\mathbb{G_1}$ denotes the point $x \cdot G_1$, with $G_1$ being the generator of the group.
 
-#### 2. Commitment
+### 2. Commitment
 
 The prover, who has a polynomial $P(x)$ of degree at most $d$, wants to commit to it. They compute the commitment $C$ by "evaluating" the polynomial at the secret point $\tau$ in the exponent. Since they don't know $\tau$, they use the public SRS:
 
@@ -22,7 +22,7 @@ $C = [P(\tau)]_{\mathbb{G_1}} = [\sum_{i=0}^d p_i \tau^i]_{\mathbb{G_1}} = \sum_
 
 The result, $C$, is a single point on the elliptic curve—a constant-sized commitment regardless of the polynomial's degree. The prover sends this commitment to the verifier. Because of the cryptographic properties, the commitment is **binding**: once the prover has generated $C$, they cannot "open" it to a different polynomial.
 
-#### 3. Proving an Evaluation
+### 3. Proving an Evaluation
 
 Now, the prover wants to convince the verifier that the polynomial $P(x)$ evaluates to a specific value $y$ at a point $a$. That is, they want to prove $P(a) = y$.
 
@@ -36,7 +36,7 @@ $\pi = [Q(\tau)]_{\mathbb{G_1}}$
 
 The prover sends the claimed evaluation $(a, y)$ and the proof $\pi$ to the verifier.
 
-#### 4. Verification
+### 4. Verification
 
 The verifier receives the commitment $C$, the claimed evaluation $(a, y)$, and the proof $\pi$. They want to check if the equation $P(x) - y = (x-a)Q(x)$ holds at the secret point $\tau$. Using the bilinear pairing, they can check this equality in the exponent without ever knowing $\tau$.
 
