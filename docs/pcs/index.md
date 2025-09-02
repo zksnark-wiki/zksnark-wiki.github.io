@@ -43,3 +43,38 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 * **Pros:** They do **not** require a trusted setup, which is a massive security benefit. They rely on more common cryptographic assumptions.
 * **Cons:** They are less efficient than KZG. The proof size and verification time grow logarithmically with the size of the polynomial, which is still very fast but not constant.
 
+
+---
+
+## Comparing
+
+| Scheme Name | Proof Size | Verification Time | Prover Time | Trusted Setup | Security Assumption | Core Technique | Advantages | Disadvantages |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **KZG** [^1] | Constant | Constant | $O(n \log n)$ | **Required** (Universal Setup) | Discrete Log on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
+| **Bulletproofs** [^2] | $O(\log^2 n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
+| **FRI** [^3] | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Collision resistance of hash functions | Iterative low-degree testing | Fully transparent, post-quantum secure | Relatively large proofs, high verification cost |
+| **IPA** [^4] | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument, Fiat-Shamir | No trusted setup, logarithmic proof size | Can be slower than KZG for large n |
+| **Hyrax** [^5] | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | Vector commitments, inner product arguments | No trusted setup, fast verification | Relies on specific assumptions |
+| **Brakedown** [^6] | Constant | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
+| **Gemini** [^7] | Constant | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Polynomial combination for batching | Combines KZG and FRI advantages | Relatively complex protocol |
+| **Virgo** [^8] | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Polylogarithmic inner product argument | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
+
+### Key Metrics Explained
+
+* **Proof Size**: A smaller proof size reduces network transmission overhead, which is crucial in scenarios like blockchains. **KZG** and **Dark/Brakdown** achieve the ideal constant-size proofs, while **FRI** and **Virgo** achieve logarithmic or polylogarithmic growth, which is significantly better than linear.
+* **Verification Time**: This is a critical metric for on-chain verification. **KZG** has the fastest, constant-time verification. **Bulletproofs**, **FRI**, and **Gemini** also have very fast logarithmic verification times, while **Dark** and **Virgo** are slightly slower.
+* **Prover Time**: The prover time for all major schemes is quasi-linear, at $O(n \log n)$, so there is little significant difference in this metric.
+* **Trusted Setup**: Whether a scheme requires a trusted setup is a key differentiator. **KZG** requires a one-time, universal trusted setup, and if this process is compromised, the entire system's security can be at risk. Schemes like **FRI**, **Bulletproofs**, **Hyrax**, and **Virgo** are **transparent** and do not require a trusted setup, giving them a natural security advantage.
+* **Security Assumptions**: Different schemes rely on different mathematical problems. **KZG** depends on the difficulty of problems on bilinear pairings. **FRI** and **Virgo** primarily rely on the collision resistance of hash functions, making them generally considered post-quantum secure.
+
+---
+## References
+
+[^1]: Kate, A., Zaverucha, G., & Goldberg, I. (2010). *Constant-size commitments to polynomials and their applications*.
+[^2]: Bünz, M., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., & Maxwell, G. (2018). *Bulletproofs: Short proofs for confidential transactions and more*.
+[^3]: Ben-Sasson, E., Bentov, I., Horesh, Y., & Riabzev, M. (2018). *Scalable, transparent, and post-quantum secure computational integrity*.
+[^4]: Groth, J. (2016). *On the size of pairing-based non-interactive arguments*.
+[^5]: Wahby, R. S., Tzialla, I., Shelat, A., Thaler, J., & Walfish, M. (2017). *Doubly-efficient zkSNARKs without trusted setup*.
+[^6]: Golovnev, A., Lee, J., Setty, S., Thaler, J. & Wahby, R. S. (2021). *Brakedown: Linear-time and field-agnostic SNARKs for R1CS*.
+[^7]: Bootle, J., Chiesa, A., Hu, Y., & Orrù, M. (2022). *Gemini: Elastic SNARKs for Diverse Environments*.
+[^8]: Zhang, J., Xie, T., Zhang, Y., & Song, D. (2020). *Virgo: Transparent polynomial delegation and its applications to zero-knowledge proof*.
