@@ -658,8 +658,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Trusted Setup">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#2-commitment" class="md-nav__link">
@@ -685,11 +684,6 @@
       4. Verification
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -789,8 +783,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Trusted Setup">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#2-commitment" class="md-nav__link">
@@ -816,11 +809,6 @@
       4. Verification
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -862,18 +850,18 @@
 <p>The process of a KZG commitment can be broken down into four distinct phases:</p>
 <h3 id="1-trusted-setup">1. Trusted Setup<a class="headerlink" href="#1-trusted-setup" title="Permanent link">&para;</a></h3>
 <p>As mentioned, this is a one-time ceremony that generates the public parameters (the SRS) which are then used by everyone. The SRS consists of points on a pairing-friendly elliptic curve, such as <span class="arithmatex">\([1]_\mathbb{G_1}, [\tau]_\mathbb{G_1}, [\tau^2]_\mathbb{G_1}, \dots, [\tau^d]_\mathbb{G_1}\)</span> where <span class="arithmatex">\(d\)</span> is the maximum degree of any polynomial to be committed to, and <span class="arithmatex">\([x]_\mathbb{G_1}\)</span> denotes the point <span class="arithmatex">\(x \cdot G_1\)</span>, with <span class="arithmatex">\(G_1\)</span> being the generator of the group.</p>
-<h4 id="2-commitment">2. Commitment<a class="headerlink" href="#2-commitment" title="Permanent link">&para;</a></h4>
+<h3 id="2-commitment">2. Commitment<a class="headerlink" href="#2-commitment" title="Permanent link">&para;</a></h3>
 <p>The prover, who has a polynomial <span class="arithmatex">\(P(x)\)</span> of degree at most <span class="arithmatex">\(d\)</span>, wants to commit to it. They compute the commitment <span class="arithmatex">\(C\)</span> by "evaluating" the polynomial at the secret point <span class="arithmatex">\(\tau\)</span> in the exponent. Since they don't know <span class="arithmatex">\(\tau\)</span>, they use the public SRS:</p>
 <p><span class="arithmatex">\(C = [P(\tau)]_{\mathbb{G_1}} = [\sum_{i=0}^d p_i \tau^i]_{\mathbb{G_1}} = \sum_{i=0}^d p_i [\tau^i]_{\mathbb{G_1}}\)</span></p>
 <p>The result, <span class="arithmatex">\(C\)</span>, is a single point on the elliptic curve—a constant-sized commitment regardless of the polynomial's degree. The prover sends this commitment to the verifier. Because of the cryptographic properties, the commitment is <strong>binding</strong>: once the prover has generated <span class="arithmatex">\(C\)</span>, they cannot "open" it to a different polynomial.</p>
-<h4 id="3-proving-an-evaluation">3. Proving an Evaluation<a class="headerlink" href="#3-proving-an-evaluation" title="Permanent link">&para;</a></h4>
+<h3 id="3-proving-an-evaluation">3. Proving an Evaluation<a class="headerlink" href="#3-proving-an-evaluation" title="Permanent link">&para;</a></h3>
 <p>Now, the prover wants to convince the verifier that the polynomial <span class="arithmatex">\(P(x)\)</span> evaluates to a specific value <span class="arithmatex">\(y\)</span> at a point <span class="arithmatex">\(a\)</span>. That is, they want to prove <span class="arithmatex">\(P(a) = y\)</span>.</p>
 <p>The prover constructs a new polynomial, the "quotient polynomial" <span class="arithmatex">\(Q(x)\)</span>:</p>
 <p><span class="arithmatex">\(Q(x) = \frac{P(x) - y}{x - a}\)</span></p>
 <p>The key insight here is from the Remainder Theorem in algebra: <span class="arithmatex">\(P(a) - y = 0\)</span> if and only if <span class="arithmatex">\((x-a)\)</span> is a factor of <span class="arithmatex">\(P(x) - y\)</span>. If the evaluation is correct (<span class="arithmatex">\(P(a) = y\)</span>), then <span class="arithmatex">\(Q(x)\)</span> will be a valid polynomial. The prover then computes a commitment to this quotient polynomial, which will serve as the proof <span class="arithmatex">\(\pi\)</span>:</p>
 <p><span class="arithmatex">\(\pi = [Q(\tau)]_{\mathbb{G_1}}\)</span></p>
 <p>The prover sends the claimed evaluation <span class="arithmatex">\((a, y)\)</span> and the proof <span class="arithmatex">\(\pi\)</span> to the verifier.</p>
-<h4 id="4-verification">4. Verification<a class="headerlink" href="#4-verification" title="Permanent link">&para;</a></h4>
+<h3 id="4-verification">4. Verification<a class="headerlink" href="#4-verification" title="Permanent link">&para;</a></h3>
 <p>The verifier receives the commitment <span class="arithmatex">\(C\)</span>, the claimed evaluation <span class="arithmatex">\((a, y)\)</span>, and the proof <span class="arithmatex">\(\pi\)</span>. They want to check if the equation <span class="arithmatex">\(P(x) - y = (x-a)Q(x)\)</span> holds at the secret point <span class="arithmatex">\(\tau\)</span>. Using the bilinear pairing, they can check this equality in the exponent without ever knowing <span class="arithmatex">\(\tau\)</span>.</p>
 <p>The verifier checks if the following pairing equation holds:</p>
 <p><span class="arithmatex">\(e(\pi, [\tau - a]_{\mathbb{G_2}}) = e(C - [y]_{\mathbb{G_1}}, G_2)\)</span></p>
