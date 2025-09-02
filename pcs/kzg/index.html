@@ -633,20 +633,68 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#univariant-version" class="md-nav__link">
+  <a href="#preliminaries" class="md-nav__link">
     <span class="md-ellipsis">
-      Univariant Version
+      Preliminaries
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multivariant-version" class="md-nav__link">
+  <a href="#kzg-commitment-for-univariant-polynomial" class="md-nav__link">
     <span class="md-ellipsis">
-      Multivariant Version
+      KZG Commitment for Univariant Polynomial
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-trusted-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Trusted Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Trusted Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-commitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Commitment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-proving-an-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Proving an Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -716,20 +764,68 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#univariant-version" class="md-nav__link">
+  <a href="#preliminaries" class="md-nav__link">
     <span class="md-ellipsis">
-      Univariant Version
+      Preliminaries
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multivariant-version" class="md-nav__link">
+  <a href="#kzg-commitment-for-univariant-polynomial" class="md-nav__link">
     <span class="md-ellipsis">
-      Multivariant Version
+      KZG Commitment for Univariant Polynomial
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-trusted-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Trusted Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Trusted Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-commitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Commitment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-proving-an-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Proving an Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -753,8 +849,39 @@
 
 
 <h1 id="kzg-commitment">KZG Commitment<a class="headerlink" href="#kzg-commitment" title="Permanent link">&para;</a></h1>
-<h2 id="univariant-version">Univariant Version<a class="headerlink" href="#univariant-version" title="Permanent link">&para;</a></h2>
-<h2 id="multivariant-version">Multivariant Version<a class="headerlink" href="#multivariant-version" title="Permanent link">&para;</a></h2>
+<h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>A "Toxic Waste" Trusted Setup</strong>: This is the most controversial part of KZG. A one-time setup ceremony is required to generate a set of public parameters, known as the Structured Reference String (SRS). A trusted party (or, more commonly, a multiparty computation or MPC) generates a random secret number, say <span class="arithmatex">\(\tau\)</span>, and then computes a set of points on an elliptic curve corresponding to the powers of <span class="arithmatex">\(\tau\)</span>, without ever revealing <span class="arithmatex">\(\tau\)</span> itself. These points are made public, and the secret <span class="arithmatex">\(\tau\)</span> is "ceremonially destroyed" (hence, "toxic waste"). As long as at least one participant in the MPC ceremony was honest and deleted their share of the secret, the security of the entire system holds.</p>
+</li>
+<li>
+<p><strong>Elliptic Curve Pairings</strong>: This is the mathematical engine of KZG. A bilinear pairing is a special function, let's call it <span class="arithmatex">\(e\)</span>, that takes two points on an elliptic curve and maps them to a third group. The key property is that it allows for a form of multiplication across different groups. Formally, for a pairing-friendly elliptic curve, the pairing <span class="arithmatex">\(e(P, Q)\)</span> has the property that <span class="arithmatex">\(e(aP, bQ) = e(P, Q)^{ab}\)</span>, where <span class="arithmatex">\(P, Q\)</span> are points on the curve and <span class="arithmatex">\(a, b\)</span> are scalars. This is the cryptographic primitive that allows for verification without revealing the secret <span class="arithmatex">\(\tau\)</span>.</p>
+</li>
+</ol>
+<h2 id="kzg-commitment-for-univariant-polynomial">KZG Commitment for Univariant Polynomial<a class="headerlink" href="#kzg-commitment-for-univariant-polynomial" title="Permanent link">&para;</a></h2>
+<p>The process of a KZG commitment can be broken down into four distinct phases:</p>
+<h3 id="1-trusted-setup">1. Trusted Setup<a class="headerlink" href="#1-trusted-setup" title="Permanent link">&para;</a></h3>
+<p>As mentioned, this is a one-time ceremony that generates the public parameters (the SRS) which are then used by everyone. The SRS consists of points on a pairing-friendly elliptic curve, such as <span class="arithmatex">\([1]_\mathbb{G_1}, [\tau]_\mathbb{G_1}, [\tau^2]_\mathbb{G_1}, \dots, [\tau^d]_\mathbb{G_1}\)</span> where <span class="arithmatex">\(d\)</span> is the maximum degree of any polynomial to be committed to, and <span class="arithmatex">\([x]_\mathbb{G_1}\)</span> denotes the point <span class="arithmatex">\(x \cdot G_1\)</span>, with <span class="arithmatex">\(G_1\)</span> being the generator of the group.</p>
+<h4 id="2-commitment">2. Commitment<a class="headerlink" href="#2-commitment" title="Permanent link">&para;</a></h4>
+<p>The prover, who has a polynomial <span class="arithmatex">\(P(x)\)</span> of degree at most <span class="arithmatex">\(d\)</span>, wants to commit to it. They compute the commitment <span class="arithmatex">\(C\)</span> by "evaluating" the polynomial at the secret point <span class="arithmatex">\(\tau\)</span> in the exponent. Since they don't know <span class="arithmatex">\(\tau\)</span>, they use the public SRS:</p>
+<p><span class="arithmatex">\(C = [P(\tau)]_{\mathbb{G_1}} = [\sum_{i=0}^d p_i \tau^i]_{\mathbb{G_1}} = \sum_{i=0}^d p_i [\tau^i]_{\mathbb{G_1}}\)</span></p>
+<p>The result, <span class="arithmatex">\(C\)</span>, is a single point on the elliptic curve—a constant-sized commitment regardless of the polynomial's degree. The prover sends this commitment to the verifier. Because of the cryptographic properties, the commitment is <strong>binding</strong>: once the prover has generated <span class="arithmatex">\(C\)</span>, they cannot "open" it to a different polynomial.</p>
+<h4 id="3-proving-an-evaluation">3. Proving an Evaluation<a class="headerlink" href="#3-proving-an-evaluation" title="Permanent link">&para;</a></h4>
+<p>Now, the prover wants to convince the verifier that the polynomial <span class="arithmatex">\(P(x)\)</span> evaluates to a specific value <span class="arithmatex">\(y\)</span> at a point <span class="arithmatex">\(a\)</span>. That is, they want to prove <span class="arithmatex">\(P(a) = y\)</span>.</p>
+<p>The prover constructs a new polynomial, the "quotient polynomial" <span class="arithmatex">\(Q(x)\)</span>:</p>
+<p><span class="arithmatex">\(Q(x) = \frac{P(x) - y}{x - a}\)</span></p>
+<p>The key insight here is from the Remainder Theorem in algebra: <span class="arithmatex">\(P(a) - y = 0\)</span> if and only if <span class="arithmatex">\((x-a)\)</span> is a factor of <span class="arithmatex">\(P(x) - y\)</span>. If the evaluation is correct (<span class="arithmatex">\(P(a) = y\)</span>), then <span class="arithmatex">\(Q(x)\)</span> will be a valid polynomial. The prover then computes a commitment to this quotient polynomial, which will serve as the proof <span class="arithmatex">\(\pi\)</span>:</p>
+<p><span class="arithmatex">\(\pi = [Q(\tau)]_{\mathbb{G_1}}\)</span></p>
+<p>The prover sends the claimed evaluation <span class="arithmatex">\((a, y)\)</span> and the proof <span class="arithmatex">\(\pi\)</span> to the verifier.</p>
+<h4 id="4-verification">4. Verification<a class="headerlink" href="#4-verification" title="Permanent link">&para;</a></h4>
+<p>The verifier receives the commitment <span class="arithmatex">\(C\)</span>, the claimed evaluation <span class="arithmatex">\((a, y)\)</span>, and the proof <span class="arithmatex">\(\pi\)</span>. They want to check if the equation <span class="arithmatex">\(P(x) - y = (x-a)Q(x)\)</span> holds at the secret point <span class="arithmatex">\(\tau\)</span>. Using the bilinear pairing, they can check this equality in the exponent without ever knowing <span class="arithmatex">\(\tau\)</span>.</p>
+<p>The verifier checks if the following pairing equation holds:</p>
+<p><span class="arithmatex">\(e(\pi, [\tau - a]_{\mathbb{G_2}}) = e(C - [y]_{\mathbb{G_1}}, G_2)\)</span></p>
+<p>Let's unpack this with the pairing property:
+-   Left side: <span class="arithmatex">\(e(\pi, [\tau - a]_{\mathbb{G_2}}) = e([Q(\tau)]_{\mathbb{G_1}}, [\tau - a]_{\mathbb{G_2}}) = e(G_1, G_2)^{Q(\tau)(\tau-a)}\)</span>
+-   Right side: <span class="arithmatex">\(e(C - [y]_{\mathbb{G_1}}, G_2) = e([P(\tau)]_{\mathbb{G_1}} - [y]_{\mathbb{G_1}}, G_2) = e([P(\tau)-y]_{\mathbb{G_1}}, G_2) = e(G_1, G_2)^{P(\tau)-y}\)</span></p>
+<p>The equation holds if and only if <span class="arithmatex">\(P(\tau) - y = Q(\tau)(\tau - a)\)</span>, which, because of the Schwartz-Zippel Lemma, proves with a high probability that <span class="arithmatex">\(P(x) - y = (x-a)Q(x)\)</span> and therefore that <span class="arithmatex">\(P(a) = y\)</span>.</p>
+<p>The proof is verified, and the verifier is convinced the prover's claim is correct, all with constant-sized data and a small amount of computation.</p>
 
 
 

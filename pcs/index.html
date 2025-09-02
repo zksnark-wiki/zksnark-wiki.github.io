@@ -675,6 +675,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#comparing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Metrics Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -829,6 +862,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#comparing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Metrics Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -888,6 +954,152 @@
 <li><strong>Pros:</strong> They do <strong>not</strong> require a trusted setup, which is a massive security benefit. They rely on more common cryptographic assumptions.</li>
 <li><strong>Cons:</strong> They are less efficient than KZG. The proof size and verification time grow logarithmically with the size of the polynomial, which is still very fast but not constant.</li>
 </ul>
+<hr />
+<h2 id="comparing">Comparing<a class="headerlink" href="#comparing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheme Name</th>
+<th style="text-align: left;">Proof Size</th>
+<th style="text-align: left;">Verification Time</th>
+<th style="text-align: left;">Prover Time</th>
+<th style="text-align: left;">Trusted Setup</th>
+<th style="text-align: left;">Security Assumption</th>
+<th style="text-align: left;">Core Technique</th>
+<th style="text-align: left;">Advantages</th>
+<th style="text-align: left;">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>KZG</strong> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Required</strong> (Universal Setup)</td>
+<td style="text-align: left;">Discrete Log on Pairing-friendly curves</td>
+<td style="text-align: left;">Bilinear Pairings</td>
+<td style="text-align: left;">Small proofs, fast verification</td>
+<td style="text-align: left;">Relies on a trusted setup</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bulletproofs</strong> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">Discrete Logarithm (DL) problem</td>
+<td style="text-align: left;">Inner Product Argument</td>
+<td style="text-align: left;">No trusted setup, small proof size</td>
+<td style="text-align: left;">Slower verification than KZG</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FRI</strong> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">Collision resistance of hash functions</td>
+<td style="text-align: left;">Iterative low-degree testing</td>
+<td style="text-align: left;">Fully transparent, post-quantum secure</td>
+<td style="text-align: left;">Relatively large proofs, high verification cost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IPA</strong> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">Discrete Logarithm (DL) problem</td>
+<td style="text-align: left;">Inner Product Argument, Fiat-Shamir</td>
+<td style="text-align: left;">No trusted setup, logarithmic proof size</td>
+<td style="text-align: left;">Can be slower than KZG for large n</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hyrax</strong> <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">DL and Strong RSA assumptions</td>
+<td style="text-align: left;">Vector commitments, inner product arguments</td>
+<td style="text-align: left;">No trusted setup, fast verification</td>
+<td style="text-align: left;">Relies on specific assumptions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Brakedown</strong> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">DL and higher-order DL assumptions</td>
+<td style="text-align: left;">Batching techniques</td>
+<td style="text-align: left;">Constant-size proofs without trusted setup</td>
+<td style="text-align: left;">Linear verification time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gemini</strong> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">DL and higher-order DL assumptions</td>
+<td style="text-align: left;">Polynomial combination for batching</td>
+<td style="text-align: left;">Combines KZG and FRI advantages</td>
+<td style="text-align: left;">Relatively complex protocol</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Virgo</strong> <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">Polylogarithmic inner product argument</td>
+<td style="text-align: left;">Vector polynomial delegation</td>
+<td style="text-align: left;">No trusted setup, post-quantum secure</td>
+<td style="text-align: left;">Proof and verification time are not constant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-metrics-explained">Key Metrics Explained<a class="headerlink" href="#key-metrics-explained" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Proof Size</strong>: A smaller proof size reduces network transmission overhead, which is crucial in scenarios like blockchains. <strong>KZG</strong> and <strong>Dark/Brakdown</strong> achieve the ideal constant-size proofs, while <strong>FRI</strong> and <strong>Virgo</strong> achieve logarithmic or polylogarithmic growth, which is significantly better than linear.</li>
+<li><strong>Verification Time</strong>: This is a critical metric for on-chain verification. <strong>KZG</strong> has the fastest, constant-time verification. <strong>Bulletproofs</strong>, <strong>FRI</strong>, and <strong>Gemini</strong> also have very fast logarithmic verification times, while <strong>Dark</strong> and <strong>Virgo</strong> are slightly slower.</li>
+<li><strong>Prover Time</strong>: The prover time for all major schemes is quasi-linear, at <span class="arithmatex">\(O(n \log n)\)</span>, so there is little significant difference in this metric.</li>
+<li><strong>Trusted Setup</strong>: Whether a scheme requires a trusted setup is a key differentiator. <strong>KZG</strong> requires a one-time, universal trusted setup, and if this process is compromised, the entire system's security can be at risk. Schemes like <strong>FRI</strong>, <strong>Bulletproofs</strong>, <strong>Hyrax</strong>, and <strong>Virgo</strong> are <strong>transparent</strong> and do not require a trusted setup, giving them a natural security advantage.</li>
+<li><strong>Security Assumptions</strong>: Different schemes rely on different mathematical problems. <strong>KZG</strong> depends on the difficulty of problems on bilinear pairings. <strong>FRI</strong> and <strong>Virgo</strong> primarily rely on the collision resistance of hash functions, making them generally considered post-quantum secure.</li>
+</ul>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Kate, A., Zaverucha, G., &amp; Goldberg, I. (2010). <em>Constant-size commitments to polynomials and their applications</em>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Bünz, M., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., &amp; Maxwell, G. (2018). <em>Bulletproofs: Short proofs for confidential transactions and more</em>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Ben-Sasson, E., Bentov, I., Horesh, Y., &amp; Riabzev, M. (2018). <em>Scalable, transparent, and post-quantum secure computational integrity</em>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Groth, J. (2016). <em>On the size of pairing-based non-interactive arguments</em>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Wahby, R. S., Tzialla, I., Shelat, A., Thaler, J., &amp; Walfish, M. (2017). <em>Doubly-efficient zkSNARKs without trusted setup</em>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Golovnev, A., Lee, J., Setty, S., Thaler, J. &amp; Wahby, R. S. (2021). <em>Brakedown: Linear-time and field-agnostic SNARKs for R1CS</em>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Bootle, J., Chiesa, A., Hu, Y., &amp; Orrù, M. (2022). <em>Gemini: Elastic SNARKs for Diverse Environments</em>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Zhang, J., Xie, T., Zhang, Y., &amp; Song, D. (2020). <em>Virgo: Transparent polynomial delegation and its applications to zero-knowledge proof</em>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
