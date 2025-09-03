@@ -752,13 +752,13 @@
   
 
 
-<h1 id="pedersen-commitment">Pedersen Commitment<a class="headerlink" href="#pedersen-commitment" title="Permanent link">&para;</a></h1>
+<h1 id="pedersen-commitment">Pedersen Commitment<a class="headerlink" href="#pedersen-commitment" title="Permanent link"></a></h1>
 <p>Pedersen Commitment can be derived from Schnorr's <span class="arithmatex">\(\Sigma\)</span>-protocol for the Discrete Logarithm Relation.</p>
 <p>At the start of the protocol, the prover generates two generators of the group <span class="arithmatex">\(\mathbb G\)</span>, we denote them with <span class="arithmatex">\(g, h\)</span>. To commit to <span class="arithmatex">\(m\in\mathbb Z_q\)</span>, the prover chooses <span class="arithmatex">\(z\in\mathbb Z_q\)</span> randomly and sends <span class="arithmatex">\(C_m=g^m\cdot h^z\)</span> to the verifier. To open it, the prover just sends <span class="arithmatex">\((m,z)\)</span> to the verifier, and verifier checks that <span class="arithmatex">\(C_m\stackrel{?}{=}g^m\cdot h^z\)</span>.</p>
 <p>The correctness, computational binding and perfect hiding is directly guarenteed by the properties of <span class="arithmatex">\(\Sigma\)</span>-protocol and Damgård's construction.</p>
 <p>Moreover, Pedersen Commitment is additively homomorphic.</p>
-<h2 id="establishing-product-relationship">Establishing Product Relationship<a class="headerlink" href="#establishing-product-relationship" title="Permanent link">&para;</a></h2>
-<h2 id="pedersen-vector-commitment">Pedersen Vector Commitment<a class="headerlink" href="#pedersen-vector-commitment" title="Permanent link">&para;</a></h2>
+<h2 id="establishing-product-relationship">Establishing Product Relationship<a class="headerlink" href="#establishing-product-relationship" title="Permanent link"></a></h2>
+<h2 id="pedersen-vector-commitment">Pedersen Vector Commitment<a class="headerlink" href="#pedersen-vector-commitment" title="Permanent link"></a></h2>
 <p><span class="arithmatex">\(C_m=g_0^{m_0}g_1^{m_1}\cdots g_{n-1}^{m_{n-1}}h^{z}\)</span></p>
 
 
