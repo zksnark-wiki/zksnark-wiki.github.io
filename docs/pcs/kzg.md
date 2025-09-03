@@ -6,7 +6,7 @@
 
 2.  **Elliptic Curve Pairings**: This is the mathematical engine of KZG. A bilinear pairing is a special function, let's call it $e$, that takes two points on an elliptic curve and maps them to a third group. The key property is that it allows for a form of multiplication across different groups. Formally, for a pairing-friendly elliptic curve, the pairing $e(P, Q)$ has the property that $e(aP, bQ) = e(P, Q)^{ab}$, where $P, Q$ are points on the curve and $a, b$ are scalars. This is the cryptographic primitive that allows for verification without revealing the secret $\tau$.
 
-## KZG Commitment for Univariant Polynomial
+## KZG Commitment for Univariant Polynomials
 
 The process of a KZG commitment can be broken down into four distinct phases:
 

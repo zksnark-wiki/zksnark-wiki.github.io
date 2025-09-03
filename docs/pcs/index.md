@@ -79,3 +79,4 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 [^6]: Golovnev, A., Lee, J., Setty, S., Thaler, J. & Wahby, R. S. (2021). *Brakedown: Linear-time and field-agnostic SNARKs for R1CS*.
 [^7]: Bootle, J., Chiesa, A., Hu, Y., & Orrù, M. (2022). *Gemini: Elastic SNARKs for Diverse Environments*.
 [^8]: Zhang, J., Xie, T., Zhang, Y., & Song, D. (2020). *Virgo: Transparent polynomial delegation and its applications to zero-knowledge proof*.
+[^9]: Boneh, D., Drake, J., Fisch, B., & Gabizon, A. (2021). *Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme*
