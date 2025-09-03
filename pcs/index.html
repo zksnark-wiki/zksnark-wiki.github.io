@@ -960,6 +960,7 @@
 <thead>
 <tr>
 <th style="text-align: left;">Scheme Name</th>
+<th style="text-align: left;">Commitment Size</th>
 <th style="text-align: left;">Proof Size</th>
 <th style="text-align: left;">Verification Time</th>
 <th style="text-align: left;">Prover Time</th>
@@ -973,6 +974,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>KZG</strong> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;">Constant</td>
 <td style="text-align: left;">Constant</td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -983,18 +985,8 @@
 <td style="text-align: left;">Relies on a trusted setup</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Bulletproofs</strong> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
-<td style="text-align: left;"><strong>Not required</strong></td>
-<td style="text-align: left;">Discrete Logarithm (DL) problem</td>
-<td style="text-align: left;">Inner Product Argument</td>
-<td style="text-align: left;">No trusted setup, small proof size</td>
-<td style="text-align: left;">Slower verification than KZG</td>
-</tr>
-<tr>
 <td style="text-align: left;"><strong>FRI</strong> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1006,6 +998,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>IPA</strong> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1016,7 +1009,32 @@
 <td style="text-align: left;">Can be slower than KZG for large n</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Bulletproofs</strong> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;">Discrete Logarithm (DL) problem</td>
+<td style="text-align: left;">Inner Product Argument</td>
+<td style="text-align: left;">No trusted setup, small proof size</td>
+<td style="text-align: left;">Slower verification than KZG</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dory</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: left;"><strong>Not required</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Hyrax</strong> <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1027,7 +1045,8 @@
 <td style="text-align: left;">Relies on specific assumptions</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Brakedown</strong> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></td>
+<td style="text-align: left;"><strong>Brakedown</strong> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;">Constant</td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1039,6 +1058,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Gemini</strong> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;">Constant</td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1050,6 +1070,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Virgo</strong> <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(\log^2 n)\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(O(n \log n)\)</span></td>
@@ -1097,6 +1118,9 @@
 </li>
 <li id="fn:8">
 <p>Zhang, J., Xie, T., Zhang, Y., &amp; Song, D. (2020). <em>Virgo: Transparent polynomial delegation and its applications to zero-knowledge proof</em>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Boneh, D., Drake, J., Fisch, B., &amp; Gabizon, A. (2021). <em>Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme</em>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

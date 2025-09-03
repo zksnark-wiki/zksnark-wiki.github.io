@@ -642,13 +642,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kzg-commitment-for-univariant-polynomial" class="md-nav__link">
+  <a href="#kzg-commitment-for-univariant-polynomials" class="md-nav__link">
     <span class="md-ellipsis">
-      KZG Commitment for Univariant Polynomial
+      KZG Commitment for Univariant Polynomials
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomial">
+    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -767,13 +767,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kzg-commitment-for-univariant-polynomial" class="md-nav__link">
+  <a href="#kzg-commitment-for-univariant-polynomials" class="md-nav__link">
     <span class="md-ellipsis">
-      KZG Commitment for Univariant Polynomial
+      KZG Commitment for Univariant Polynomials
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomial">
+    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -846,7 +846,7 @@
 <p><strong>Elliptic Curve Pairings</strong>: This is the mathematical engine of KZG. A bilinear pairing is a special function, let's call it <span class="arithmatex">\(e\)</span>, that takes two points on an elliptic curve and maps them to a third group. The key property is that it allows for a form of multiplication across different groups. Formally, for a pairing-friendly elliptic curve, the pairing <span class="arithmatex">\(e(P, Q)\)</span> has the property that <span class="arithmatex">\(e(aP, bQ) = e(P, Q)^{ab}\)</span>, where <span class="arithmatex">\(P, Q\)</span> are points on the curve and <span class="arithmatex">\(a, b\)</span> are scalars. This is the cryptographic primitive that allows for verification without revealing the secret <span class="arithmatex">\(\tau\)</span>.</p>
 </li>
 </ol>
-<h2 id="kzg-commitment-for-univariant-polynomial">KZG Commitment for Univariant Polynomial<a class="headerlink" href="#kzg-commitment-for-univariant-polynomial" title="Permanent link">&para;</a></h2>
+<h2 id="kzg-commitment-for-univariant-polynomials">KZG Commitment for Univariant Polynomials<a class="headerlink" href="#kzg-commitment-for-univariant-polynomials" title="Permanent link">&para;</a></h2>
 <p>The process of a KZG commitment can be broken down into four distinct phases:</p>
 <h3 id="1-trusted-setup">1. Trusted Setup<a class="headerlink" href="#1-trusted-setup" title="Permanent link">&para;</a></h3>
 <p>As mentioned, this is a one-time ceremony that generates the public parameters (the SRS) which are then used by everyone. The SRS consists of points on a pairing-friendly elliptic curve, such as <span class="arithmatex">\([1]_\mathbb{G_1}, [\tau]_\mathbb{G_1}, [\tau^2]_\mathbb{G_1}, \dots, [\tau^d]_\mathbb{G_1}\)</span> where <span class="arithmatex">\(d\)</span> is the maximum degree of any polynomial to be committed to, and <span class="arithmatex">\([x]_\mathbb{G_1}\)</span> denotes the point <span class="arithmatex">\(x \cdot G_1\)</span>, with <span class="arithmatex">\(G_1\)</span> being the generator of the group.</p>
