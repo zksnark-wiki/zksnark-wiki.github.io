@@ -50,13 +50,13 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 
 | Scheme Name | Commitment Size | Proof Size | Verification Time | Prover Time | Trusted Setup | Security Assumption | Core Technique | Advantages | Disadvantages |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **KZG** [^1] | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
+| **KZG**(univariant)[^1]  | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
 | **FRI** [^3] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Collision resistance of hash functions | Iterative low-degree testing | Fully transparent, post-quantum secure | Relatively large proofs, high verification cost |
 | **IPA** [^4] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument, Fiat-Shamir | No trusted setup, logarithmic proof size | Can be slower than KZG for large n |
-| **Bulletproofs** [^2] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
+| **Bulletproofs** [^2] [^9] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
 | **Dory** | | $O(\log n)$ | $O(\log n)$ | $O(n)$ | **Not required** | | | | |
 | **Hyrax** [^5] | | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | Vector commitments, inner product arguments | No trusted setup, fast verification | Relies on specific assumptions |
-| **Brakedown** [^6] [^9] | | $O(1)$ | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
+| **Brakedown** [^6] | | $O(1)$ | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
 | **Gemini** [^7] | | $O(1)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Polynomial combination for batching | Combines KZG and FRI advantages | Relatively complex protocol |
 | **Virgo** [^8] | | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Polylogarithmic inner product argument | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
 

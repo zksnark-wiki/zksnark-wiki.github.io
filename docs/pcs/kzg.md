@@ -58,7 +58,7 @@ The commitment size and the proof size are $O(1)$ as the they contain only one g
 
 It's based on the following fact.
 
-**Fact** (Papamanthou, Shi, and Tamassia \[[PST13](#fn:PST13)\]). For any fixed $z = (z_1, \dots, z_\ell) \in \mathbb{F}_p^\ell$ and any multilinear polynomial $q$, $q(z) = v$ if and only if there is a unique set of $\ell$ multilinear polynomials $w_1, \dots, w_\ell$ such that
+**Fact** (Papamanthou, Shi, and Tamassia \[[PST13](#fn:PST13)\]<span id="fnref:PST13"></span>). For any fixed $z = (z_1, \dots, z_\ell) \in \mathbb{F}_p^\ell$ and any multilinear polynomial $q$, $q(z) = v$ if and only if there is a unique set of $\ell$ multilinear polynomials $w_1, \dots, w_\ell$ such that
 $$
 q(X) - v = \sum_{i=1}^\ell (X_i - z_i)w_i(X).
 $$
@@ -83,10 +83,10 @@ This equation holds if and only if the original polynomial identity is correct, 
 
 ### Analysis
 
-In this extended scheme for multilinear polynomials, the commitment size remains constant at **$O(1)$** (one group element). However, the proof size is **$O(\ell)$** because the proof consists of commitments to each of the $\ell$ quotient polynomials. Consequently, the verifier's time is also **$O(\ell)$**, as it must perform a pairing check for each polynomial. As for the prover time, \[[ZGK+18](#fn:ZGK+18)\] shows that the prover can compute $w_1,...,w_{\ell}$ and evaluate $g^{w_1(r)},...,g^{w_{\ell}(r)}$ with $O(2^{\ell})$ time.
+In this extended scheme for multilinear polynomials, the commitment size remains constant at **$O(1)$** (one group element). However, the proof size is **$O(\ell)$** because the proof consists of commitments to each of the $\ell$ quotient polynomials. Consequently, the verifier's time is also **$O(\ell)$**, as it must perform a pairing check for each polynomial. As for the prover time, \[[ZGK+18](#fn:ZGK+18)\]<span id="fnref:ZGK+18"></span> shows that the prover can compute $w_1,...,w_{\ell}$ and evaluate $g^{w_1(r)},...,g^{w_{\ell}(r)}$ with $O(2^{\ell})$ time.
 
 ## References
 
 [^PST13]: \[PST13\] Papamanthou, C., Shi, E., & Tamassia, R. (2013). [*Signatures of Correct Computation*](https://eprint.iacr.org/2011/587.pdf).
-[^Tha23]: \[Tha23\] Thaler, J. (2023). [*Proofs, Arguments, and Zero-Knowledge*](https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf).
+[^Tha23]: \[Tha23\] Thaler, J. (2023). [*Proofs, Arguments, and Zero-Knowledge*](https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf). <span id="fnref:Tha23"></span>
 [^ZGK+18]: \[ZGK+18\] Zhang, Y., Genkin, D., Katz, J., Papadopoulos, D., & Papamanthou, C. (2018). [*vRAM: Faster Verifiable RAM With Program-Independent Preprocessing*](https://faculty.cc.gatech.edu/~genkin/papers/vram.pdf).
