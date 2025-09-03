@@ -56,7 +56,7 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 | **Bulletproofs** [^2] | Constant | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
 | **Dory** | | $O(\log n)$ | $O(\log n)$ | $O(n)$ | **Not required** | | | | |
 | **Hyrax** [^5] | | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | Vector commitments, inner product arguments | No trusted setup, fast verification | Relies on specific assumptions |
-| **Brakedown** [^6] | | Constant | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
+| **Brakedown** [^6] [^9] | | Constant | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
 | **Gemini** [^7] | | Constant | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Polynomial combination for batching | Combines KZG and FRI advantages | Relatively complex protocol |
 | **Virgo** [^8] | | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Polylogarithmic inner product argument | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
 
@@ -79,4 +79,4 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 [^6]: Golovnev, A., Lee, J., Setty, S., Thaler, J. & Wahby, R. S. (2021). *Brakedown: Linear-time and field-agnostic SNARKs for R1CS*.
 [^7]: Bootle, J., Chiesa, A., Hu, Y., & Orrù, M. (2022). *Gemini: Elastic SNARKs for Diverse Environments*.
 [^8]: Zhang, J., Xie, T., Zhang, Y., & Song, D. (2020). *Virgo: Transparent polynomial delegation and its applications to zero-knowledge proof*.
-[^9]: Boneh, D., Drake, J., Fisch, B., & Gabizon, A. (2021). *Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme*
+[^9]: Boneh, D., Drake, J., Fisch, B., & Gabizon, A. (2021). *Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme*.
