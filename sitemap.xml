@@ -2,46 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zksnark-wiki.github.io/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/about/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/contri/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/commitment/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/commitment/pedersen/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
-         <loc>https://zksnark-wiki.github.io/drafts/libra/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <loc>https://zksnark-wiki.github.io/distributed/</loc>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
-         <loc>https://zksnark-wiki.github.io/drafts/virgo/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <loc>https://zksnark-wiki.github.io/distributed/devirgo/</loc>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
-         <loc>https://zksnark-wiki.github.io/drafts/virgopp/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <loc>https://zksnark-wiki.github.io/distributed/dizk/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/distributed/pianist/</loc>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/ipa/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
     </url>
     <url>
          <loc>https://zksnark-wiki.github.io/pcs/kzg/</loc>
-         <lastmod>2025-09-03</lastmod>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/primitives/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/snark/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/snark/libra/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/snark/virgo%2B%2B/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/snark/virgo/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/space-efficient/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/space-efficient/gemini/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/space-efficient/hobbit/</loc>
+         <lastmod>2025-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://zksnark-wiki.github.io/space-efficient/sparrow/</loc>
+         <lastmod>2025-09-05</lastmod>
     </url>
 </urlset>
