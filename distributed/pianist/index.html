@@ -1046,6 +1046,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pianist
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1057,6 +1070,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-piop-for-data-paralell-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed PIOP for Data-Paralell Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-piop-for-general-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed PIOP for General Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-kzg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed KZG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed KZG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dkzgkeygen1lambda-m-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.KeyGen(\(1^\lambda, M, T\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgcommitf-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Commit(\(f, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgopenf-beta-alpha-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Open(\(f, \beta, \alpha, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgverifymathrmcom_f-beta-alpha-z-pi_f-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Verify(\(\mathrm{com}_f, \beta, \alpha, z, \pi_f, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1230,6 +1331,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-piop-for-data-paralell-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed PIOP for Data-Paralell Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-piop-for-general-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed PIOP for General Circuits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-kzg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed KZG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed KZG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dkzgkeygen1lambda-m-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.KeyGen(\(1^\lambda, M, T\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgcommitf-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Commit(\(f, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgopenf-beta-alpha-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Open(\(f, \beta, \alpha, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkzgverifymathrmcom_f-beta-alpha-z-pi_f-mathsfpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKZG.Verify(\(\mathrm{com}_f, \beta, \alpha, z, \pi_f, \mathsf{pp}\))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1248,7 +1426,42 @@
 
 
 <h1 id="pianist">Pianist<a class="headerlink" href="#pianist" title="Permanent link"></a></h1>
-<p>The Pianist protocol is a distributed zkSNARK system designed to enable multiple machines to collaboratively generate a single, succinct proof. The protocol's core innovation lies in the elegant combination of a <strong>bivariate Plonk</strong> constraint system and a <strong>distributively computable KZG</strong> polynomial commitment scheme. This allows for the parallelization of the computationally intensive proving process, leading to a linear increase in prover speed as more machines are added. A key architectural benefit is that this scalability is achieved while maintaining a constant, asymptotically optimal communication overhead, proof size, and verifier time, regardless of the complexity of the underlying computation or the number of transactions being processed.   </p>
+<p>The Pianist protocol is a distributed zkSNARK system designed to enable multiple machines to collaboratively generate a single, succinct proof. The protocol's core innovation lies in the elegant combination of a <strong>bivariate Plonk</strong> constraint system and a <strong>distributively computable KZG</strong> polynomial commitment scheme.</p>
+<h2 id="distributed-piop-for-data-paralell-circuits">Distributed PIOP for Data-Paralell Circuits<a class="headerlink" href="#distributed-piop-for-data-paralell-circuits" title="Permanent link"></a></h2>
+<h2 id="distributed-piop-for-general-circuits">Distributed PIOP for General Circuits<a class="headerlink" href="#distributed-piop-for-general-circuits" title="Permanent link"></a></h2>
+<h2 id="distributed-kzg">Distributed KZG<a class="headerlink" href="#distributed-kzg" title="Permanent link"></a></h2>
+<p>In our setting, we need to commit to some polynomial <span class="arithmatex">\(f(Y,X):\mathbb F^M\times\mathbb F^T\to\mathbb F\)</span>, and machine <span class="arithmatex">\(i\)</span> holds the evaluations of <span class="arithmatex">\(f(\langle i\rangle,\cdot)\)</span>. We let <span class="arithmatex">\(f_i(X)\)</span> denote <span class="arithmatex">\((\langle i\rangle,X)\)</span>.</p>
+<h3 id="dkzgkeygen1lambda-m-t"><strong>DKZG.KeyGen(<span class="arithmatex">\(1^\lambda, M, T\)</span>)</strong><a class="headerlink" href="#dkzgkeygen1lambda-m-t" title="Permanent link"></a></h3>
+<p>This is the key generation phase. It generates the public parameters <span class="arithmatex">\(\mathsf{pp}\)</span> using a security parameter <span class="arithmatex">\(\lambda\)</span>, the number of machines <span class="arithmatex">\(M\)</span>, and a degree bound <span class="arithmatex">\(T\)</span>. The parameters are:</p>
+<div class="arithmatex">\[
+\mathsf{pp} = (g, g^{\tau_X}, g^{\tau_Y}, (U_{i,j})_{0 \le i &lt; M, \ 0 \le j &lt; T}= (g^{R_i(\tau_Y) L_j(\tau_X)})_{0 \le i &lt; M, \ 0 \le j &lt; T})
+\]</div>
+<p>with trapdoor values <span class="arithmatex">\(\tau_Y\)</span> and <span class="arithmatex">\(\tau_X\)</span>, which should be discarded.</p>
+<h3 id="dkzgcommitf-mathsfpp"><strong>DKZG.Commit(<span class="arithmatex">\(f, \mathsf{pp}\)</span>)</strong><a class="headerlink" href="#dkzgcommitf-mathsfpp" title="Permanent link"></a></h3>
+<p>In the commitment phase, each machine <span class="arithmatex">\(P_i\)</span> computes a commitment, <span class="arithmatex">\(com_{f_i}\)</span>, for its local polynomial <span class="arithmatex">\(f_i(X)\)</span>. This commitment is the product of elements from the public parameters:</p>
+<div class="arithmatex">\[\mathrm{com}_{f_i} = \prod_{j=0}^{T-1} U_{i,j}^{f_{i,j}}\]</div>
+<p>where <span class="arithmatex">\(f_{i,j}=f_i(\langle j\rangle)\)</span>. Each <span class="arithmatex">\(P_i\)</span> sends its commitment to <span class="arithmatex">\(P_0\)</span>, the master node. The master node then computes the final commitment <span class="arithmatex">\(\mathrm{com}_f\)</span> by multiplying all the individual commitments:</p>
+<div class="arithmatex">\[\mathrm{com}_f = \prod_{i=0}^{M-1} \mathrm{com}_{f_i}\]</div>
+<h3 id="dkzgopenf-beta-alpha-mathsfpp"><strong>DKZG.Open(<span class="arithmatex">\(f, \beta, \alpha, \mathsf{pp}\)</span>)</strong><a class="headerlink" href="#dkzgopenf-beta-alpha-mathsfpp" title="Permanent link"></a></h3>
+<p>This is the opening phase, where the polynomial <span class="arithmatex">\(f\)</span> is evaluated at a specific point <span class="arithmatex">\((\alpha, \beta)\)</span>.</p>
+<ol>
+<li>
+<p>Each machine <span class="arithmatex">\(P_i\)</span> computes its local evaluation <span class="arithmatex">\(f_i(\alpha)\)</span> and a proof <span class="arithmatex">\(\pi_0^{(i)}\)</span>. <span class="arithmatex">\(P_i\)</span> first calculates the quotient polynomial:</p>
+<div class="arithmatex">\[q_0^{(i)}(X) = \frac{f_i(X) - f_i(\alpha)}{X-\alpha}\]</div>
+<p><span class="arithmatex">\(P_i\)</span> then computes the proof element <span class="arithmatex">\(\pi_0^{(i)} = g^{R_i(\tau_Y) q_0^{(i)}(\tau_X)}\)</span> using the public parameters and sends both <span class="arithmatex">\(f_i(\alpha)\)</span> and <span class="arithmatex">\(\pi_0^{(i)}\)</span> to the master node <span class="arithmatex">\(P_0\)</span>.</p>
+</li>
+<li>
+<p>After receiving all the evaluations and proof elements, <span class="arithmatex">\(P_0\)</span> computes the final proof element <span class="arithmatex">\(\pi_0 = \prod_{i=0}^{M-1} \pi_0^{(i)}\)</span>. <span class="arithmatex">\(P_0\)</span> also recovers the polynomial <span class="arithmatex">\(f(Y,\alpha)\)</span> by summing the local polynomials:</p>
+<div class="arithmatex">\[f(Y,\alpha) = \sum_{i=0}^{M-1} R_i(Y)f_i(\alpha)\]</div>
+<p><span class="arithmatex">\(P_0\)</span> then computes the final evaluation of the full polynomial, <span class="arithmatex">\(f(\beta, \alpha)\)</span>, and a quotient polynomial <span class="arithmatex">\(q_1(Y)\)</span> as:</p>
+<div class="arithmatex">\[q_1(Y) = \frac{f(Y, \alpha) - f(\beta, \alpha)}{Y-\beta}\]</div>
+<p><span class="arithmatex">\(P_0\)</span> computes the final proof element <span class="arithmatex">\(\pi_1 = g^{q_1(\tau_Y)}\)</span> and sends the evaluation <span class="arithmatex">\(z = f(\beta, \alpha)\)</span> and the full proof <span class="arithmatex">\(\pi_f = (\pi_0, \pi_1)\)</span> to a verifier <span class="arithmatex">\(V\)</span>.</p>
+</li>
+</ol>
+<h3 id="dkzgverifymathrmcom_f-beta-alpha-z-pi_f-mathsfpp"><strong>DKZG.Verify(<span class="arithmatex">\(\mathrm{com}_f, \beta, \alpha, z, \pi_f, \mathsf{pp}\)</span>)</strong><a class="headerlink" href="#dkzgverifymathrmcom_f-beta-alpha-z-pi_f-mathsfpp" title="Permanent link"></a></h3>
+<p>The process is the same as original KZG. It parses the proof <span class="arithmatex">\(\pi_f = (\pi_0, \pi_1)\)</span> and performs a pairing check:</p>
+<div class="arithmatex">\[e(com_f/g^z, g^\beta) \stackrel{?}{=} e(\pi_0, g^{\tau_X - \alpha})e(\pi_1, g^{\tau_Y - \beta})\]</div>
+<p>If the check passes, the output is <span class="arithmatex">\(\mathsf{accept}\)</span>; otherwise, it is <span class="arithmatex">\(\mathsf{reject}\)</span>.</p>
 
 
 
