@@ -12,13 +12,13 @@
         <meta name="author" content="louhc">
       
       
-        <link rel="canonical" href="https://zksnark-wiki.github.io/pcs/kzg/">
+        <link rel="canonical" href="https://zksnark-wiki.github.io/distributed/devirgo/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../ipa/">
+        <link rel="next" href="../dizk/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>KZG Commitment - zkSNARK wiki</title>
+        <title>DeVirgo - zkSNARK wiki</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kzg-commitment" class="md-skip">
+        <a href="#devirgo" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              KZG Commitment
+              DeVirgo
             
           </span>
         </div>
@@ -253,13 +253,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../pcs/" class="md-tabs__link">
           
   
   
@@ -295,11 +293,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../distributed/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -662,29 +662,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -697,7 +692,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             PCS
@@ -711,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../pcs/" class="md-nav__link">
         
   
   
@@ -731,32 +726,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    KZG Commitment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pcs/kzg/" class="md-nav__link">
         
   
   
@@ -767,146 +740,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preliminaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Preliminaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kzg-commitment-for-univariant-polynomials" class="md-nav__link">
-    <span class="md-ellipsis">
-      KZG Commitment for Univariant Polynomials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-trusted-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Trusted Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-commitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Commitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-proving-an-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Proving an Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Verification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for-multilinear-polynomials" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Multilinear Polynomials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="For Multilinear Polynomials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-proving-an-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Proving an Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Verification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -919,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ipa/" class="md-nav__link">
+      <a href="../../pcs/ipa/" class="md-nav__link">
         
   
   
@@ -1086,24 +919,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1116,7 +954,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Distributed ZKP
@@ -1130,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../distributed/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1150,10 +988,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../distributed/devirgo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1164,6 +1011,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1176,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../distributed/dizk/" class="md-nav__link">
+      <a href="../dizk/" class="md-nav__link">
         
   
   
@@ -1199,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../distributed/pianist/" class="md-nav__link">
+      <a href="../pianist/" class="md-nav__link">
         
   
   
@@ -1382,134 +1230,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preliminaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Preliminaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kzg-commitment-for-univariant-polynomials" class="md-nav__link">
-    <span class="md-ellipsis">
-      KZG Commitment for Univariant Polynomials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="KZG Commitment for Univariant Polynomials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-trusted-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Trusted Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-commitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Commitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-proving-an-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Proving an Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Verification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for-multilinear-polynomials" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Multilinear Polynomials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="For Multilinear Polynomials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-proving-an-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Proving an Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Verification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1527,69 +1247,7 @@
   
 
 
-<h1 id="kzg-commitment">KZG Commitment<a class="headerlink" href="#kzg-commitment" title="Permanent link"></a></h1>
-<h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link"></a></h2>
-<ul>
-<li>DLP (Discrete Logarithm Problem), DDH (Decision Diffie-Hellman assumption), CDH (Computational Diffie-Hellman assumption).</li>
-<li>Pairing and pairing-friendly groups.</li>
-<li>Schwarz-Zippel Lemma.</li>
-</ul>
-<h2 id="kzg-commitment-for-univariant-polynomials">KZG Commitment for Univariant Polynomials<a class="headerlink" href="#kzg-commitment-for-univariant-polynomials" title="Permanent link"></a></h2>
-<p>The process of a KZG commitment can be broken down into four distinct phases:</p>
-<h3 id="1-trusted-setup">1. Trusted Setup<a class="headerlink" href="#1-trusted-setup" title="Permanent link"></a></h3>
-<p>This is a one-time ceremony that generates the public parameters (the SRS) which are then used by everyone (both the prover and the verifier). </p>
-<p>The SRS consists of elements on a pairing-friendly group <span class="arithmatex">\(\mathbb G\)</span>, that is, <span class="arithmatex">\((g,g^{\tau},g^{\tau^2},...,g^{\tau^d})\)</span> where <span class="arithmatex">\(d\)</span> is the maximum degree of any polynomial to be committed to, and <span class="arithmatex">\(g\)</span> is a generator of the group. The value <span class="arithmatex">\(\tau\)</span> is chosen from <span class="arithmatex">\(\{0,1,...,|\mathbb G|-1\}\)</span> at random, and as a "toxic waste", it should be discarded once the SRS has been generated. So <span class="arithmatex">\(\tau\)</span> can't be known by anyone.</p>
-<h3 id="2-commitment">2. Commitment<a class="headerlink" href="#2-commitment" title="Permanent link"></a></h3>
-<p>The prover, who has a polynomial <span class="arithmatex">\(q(x)\)</span> of degree at most <span class="arithmatex">\(d\)</span>, wants to commit to it. He computes the commitment <span class="arithmatex">\(C\)</span> by "evaluating" <span class="arithmatex">\(g^{q(\tau)}\)</span>. Since he doesn't know <span class="arithmatex">\(\tau\)</span>, he uses the public SRS:</p>
-<div class="arithmatex">\[C = g^{q(\tau)} = g^{\sum_{i=0}^d c_i \tau^i} = \prod_{i=0}^d (g^{\tau^i})^{c_i}\]</div>
-<p>The result, <span class="arithmatex">\(C\)</span>, is an single element of <span class="arithmatex">\(\mathbb G\)</span>—a constant-sized commitment regardless of the polynomial's degree. The prover sends this commitment to the verifier. Because of the cryptographic properties, the commitment is <strong>binding</strong>: once the prover has generated <span class="arithmatex">\(C\)</span>, they cannot "open" it to a different polynomial.</p>
-<h3 id="3-proving-an-evaluation">3. Proving an Evaluation<a class="headerlink" href="#3-proving-an-evaluation" title="Permanent link"></a></h3>
-<p>Now, the prover wants to convince the verifier that the polynomial <span class="arithmatex">\(q(X)\)</span> evaluates to a specific value <span class="arithmatex">\(v\)</span> at a point <span class="arithmatex">\(z\)</span>. That is, they want to prove <span class="arithmatex">\(q(z) = v\)</span>.</p>
-<p>The prover constructs a new polynomial, the "quotient polynomial" <span class="arithmatex">\(w(X)\)</span>:</p>
-<div class="arithmatex">\[w(X) = \frac{q(X) - v}{X - z}\]</div>
-<p>The key insight here is from the Remainder Theorem in algebra: <span class="arithmatex">\(q(z) - v = 0\)</span> if and only if <span class="arithmatex">\((X-z)\)</span> is a factor of <span class="arithmatex">\(q(X) - v\)</span>. If the evaluation is correct (<span class="arithmatex">\(q(z) = v\)</span>), then <span class="arithmatex">\(w(z)\)</span> will be a valid polynomial. The prover then computes a commitment to this quotient polynomial, which will serve as the proof <span class="arithmatex">\(\pi\)</span>:</p>
-<div class="arithmatex">\[\pi = g^{w(\tau)}\]</div>
-<p>The prover sends the claimed evaluation <span class="arithmatex">\((z, v)\)</span> and the proof <span class="arithmatex">\(\pi\)</span> to the verifier.</p>
-<h3 id="4-verification">4. Verification<a class="headerlink" href="#4-verification" title="Permanent link"></a></h3>
-<p>The verifier receives the commitment <span class="arithmatex">\(C\)</span>, the claimed evaluation <span class="arithmatex">\((z, v)\)</span>, and the proof <span class="arithmatex">\(\pi\)</span>. He wants to check if the equation <span class="arithmatex">\(q(X)-v=(X-z)w(X)\)</span> holds. Due to the Schwartz-Zippel Lemma, he only needs to check whether it holds at a random point, that is, <span class="arithmatex">\(\tau\)</span>. As <span class="arithmatex">\(\tau\)</span> is unknown to the prover, it's safe to take it as a random number.</p>
-<p>So now the verifier wants to check <span class="arithmatex">\(q(\tau)-v=(\tau-z)w(\tau)\)</span>. Using the bilinear pairing, they can check this equality in the exponent without ever knowing <span class="arithmatex">\(\tau\)</span>.</p>
-<p>The verifier checks if the following pairing equation holds:</p>
-<div class="arithmatex">\[e(C / g^{v}, g) = e(g^{\tau - z}, \pi)\]</div>
-<p>The equation holds if and only if <span class="arithmatex">\(q(\tau) - v = (\tau - z)w(\tau)\)</span>, which, because of the Schwartz-Zippel Lemma, proves with a high probability that <span class="arithmatex">\(q(X) - v = (X-z)w(X)\)</span> and therefore that <span class="arithmatex">\(q(z) = v\)</span>.</p>
-<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link"></a></h3>
-<p>The commitment size and the proof size are <span class="arithmatex">\(O(1)\)</span> as the they contain only one group element respectively. It takes the prover <span class="arithmatex">\(O(d)\)</span> time to compute the commitment <span class="arithmatex">\(C\)</span> and the proof <span class="arithmatex">\(\pi=g^{\frac{q(X)-v}{X-z}}\)</span>. The verifier time is <span class="arithmatex">\(O(1)\)</span>.</p>
-<h2 id="for-multilinear-polynomials">For Multilinear Polynomials<a class="headerlink" href="#for-multilinear-polynomials" title="Permanent link"></a></h2>
-<p>It's based on the following fact.</p>
-<p><strong>Fact</strong> (Papamanthou, Shi, and Tamassia [<a href="#fn:PST13">PST13</a>]<span id="fnref:PST13"></span>). For any fixed <span class="arithmatex">\(z = (z_1, \dots, z_\ell) \in \mathbb{F}_p^\ell\)</span> and any multilinear polynomial <span class="arithmatex">\(q\)</span>, <span class="arithmatex">\(q(z) = v\)</span> if and only if there is a unique set of <span class="arithmatex">\(\ell\)</span> multilinear polynomials <span class="arithmatex">\(w_1, \dots, w_\ell\)</span> such that
-$$
-q(X) - v = \sum_{i=1}^\ell (X_i - z_i)w_i(X).
-$$</p>
-<h3 id="1-proving-an-evaluation">1. Proving an Evaluation<a class="headerlink" href="#1-proving-an-evaluation" title="Permanent link"></a></h3>
-<p>Suppose a prover wants to prove that a multilinear polynomial <span class="arithmatex">\(q(X)\)</span> evaluates to a specific value <span class="arithmatex">\(v\)</span> at a point <span class="arithmatex">\(z = (z_1, \dots, z_\ell)\)</span>.</p>
-<p>The prover's task is to provide proof for the relationship in the above fact. The most straightforward approach is for the prover to compute a commitment for each of the <span class="arithmatex">\(\ell\)</span> quotient polynomials. The proof, <span class="arithmatex">\(\pi\)</span>, would be a tuple of these commitments:</p>
-<div class="arithmatex">\[\pi = (g^{w_1(\tau)}, g^{w_2(\tau)}, \dots, g^{w_\ell(\tau)})\]</div>
-<p>The prover sends the claimed evaluation <span class="arithmatex">\((z, v)\)</span> along with the proof <span class="arithmatex">\(\pi\)</span> to the verifier.</p>
-<h3 id="2-verification">2. Verification<a class="headerlink" href="#2-verification" title="Permanent link"></a></h3>
-<p>The verifier receives the commitment <span class="arithmatex">\(C = g^{q(\tau)}\)</span>, the claimed evaluation <span class="arithmatex">\((z, v)\)</span>, and the proof <span class="arithmatex">\(\pi\)</span>. The verifier's goal is to check if the polynomial identity holds in the exponent. This can be verified with <span class="arithmatex">\(\ell\)</span> separate pairing checks:</p>
-<div class="arithmatex">\[e(C/g^v, g) = \prod_{i=1}^\ell e(g^{w_i(\tau)}, g^{\tau_i-z_i})\]</div>
-<p>This equation holds if and only if the original polynomial identity is correct, which proves with high probability that <span class="arithmatex">\(q(z) = v\)</span>. While this is a correct verification method, it is important to note that the verifier's time scales with the number of variables, <span class="arithmatex">\(\ell\)</span>, which can be a limiting factor.</p>
-<h3 id="analysis_1">Analysis<a class="headerlink" href="#analysis_1" title="Permanent link"></a></h3>
-<p>In this extended scheme for multilinear polynomials, the commitment size remains constant at <strong><span class="arithmatex">\(O(1)\)</span></strong> (one group element). However, the proof size is <strong><span class="arithmatex">\(O(\ell)\)</span></strong> because the proof consists of commitments to each of the <span class="arithmatex">\(\ell\)</span> quotient polynomials. Consequently, the verifier's time is also <strong><span class="arithmatex">\(O(\ell)\)</span></strong>, as it must perform a pairing check for each polynomial. As for the prover time, [<a href="#fn:ZGK+18">ZGK+18</a>]<span id="fnref:ZGK+18"></span> shows that the prover can compute <span class="arithmatex">\(w_1,...,w_{\ell}\)</span> and evaluate <span class="arithmatex">\(g^{w_1(r)},...,g^{w_{\ell}(r)}\)</span> with <span class="arithmatex">\(O(2^{\ell})\)</span> time.</p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link"></a></h2>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:PST13">
-<p>[PST13] Papamanthou, C., Shi, E., &amp; Tamassia, R. (2013). <a href="https://eprint.iacr.org/2011/587.pdf"><em>Signatures of Correct Computation</em></a>.&#160;<a class="footnote-backref" href="#fnref:PST13" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:Tha23">
-<p>[Tha23] Thaler, J. (2023). <a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf"><em>Proofs, Arguments, and Zero-Knowledge</em></a>. <span id="fnref:Tha23"></span>&#160;<a class="footnote-backref" href="#fnref:Tha23" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:ZGK+18">
-<p>[ZGK+18] Zhang, Y., Genkin, D., Katz, J., Papadopoulos, D., &amp; Papamanthou, C. (2018). <a href="https://faculty.cc.gatech.edu/~genkin/papers/vram.pdf"><em>vRAM: Faster Verifiable RAM With Program-Independent Preprocessing</em></a>.&#160;<a class="footnote-backref" href="#fnref:ZGK+18" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="devirgo">DeVirgo<a class="headerlink" href="#devirgo" title="Permanent link"></a></h1>
 
 
 

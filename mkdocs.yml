@@ -19,6 +19,8 @@ nav:
     - zkSNARK-wiki: index.md
     - About: about.md
     - Contributing: contri.md
+  - Primitives:
+    - Primitives: primitives/index.md
   - Commitment:
     - Commitment: commitment/index.md
     - Pedersen Commitment: commitment/pedersen.md
@@ -26,6 +28,26 @@ nav:
     - PCS: pcs/index.md
     - KZG Commitment: pcs/kzg.md
     - IPA Commitment: pcs/ipa.md
+  - SNARK:
+    - SNARK: snark/index.md
+    - Libra: snark/libra.md
+    - Virgo: snark/virgo.md
+    - Virgo++: snark/virgo++.md
+    # - Groth16: snark/groth16.md
+    # - PLONK: snark/plonk.md
+    # - Sonic: snark/sonic.md
+    # - Marlin: snark/marlin.md
+    # - Halo2: snark/halo2.md
+  - Distributed ZKP:
+    - Distributed ZKP: distributed/index.md
+    - DeVirgo: distributed/devirgo.md
+    - DIZK: distributed/dizk.md
+    - Pianist: distributed/pianist.md
+  - Space-Efficient ZKP:
+    - Space-Efficient ZKP: space-efficient/index.md
+    - Gemini: space-efficient/gemini.md
+    - Sparrow: space-efficient/sparrow.md
+    - Hobbit: space-efficient/hobbit.md
   
 # Theme
 theme:
@@ -61,7 +83,7 @@ markdown_extensions:
   - meta
   - toc:
       permalink: ""
-      slugify: !!python/name:pymdownx.slugs.uslugify
+      # slugify: !!python/name:pymdownx.slugs.uslugify
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.caret

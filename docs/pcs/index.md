@@ -50,7 +50,7 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 
 | Scheme Name | Commitment Size | Proof Size | Verification Time | Prover Time | Trusted Setup | Security Assumption | Core Technique | Advantages | Disadvantages |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **KZG**(univariant)[^1]  | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
+| **KZG**(U)[^1]  | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
 | **FRI** [^3] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Collision resistance of hash functions | Iterative low-degree testing | Fully transparent, post-quantum secure | Relatively large proofs, high verification cost |
 | **IPA** [^4] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument, Fiat-Shamir | No trusted setup, logarithmic proof size | Can be slower than KZG for large n |
 | **Bulletproofs** [^2] [^9] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
@@ -62,6 +62,7 @@ There are a few widely-used PCS, each with its own trade-offs. The main differen
 
 ### Key Metrics Explained
 
+* **U/M**: For univariant polynomials or multilinear polynomials.
 * **Proof Size**: A smaller proof size reduces network transmission overhead, which is crucial in scenarios like blockchains. **KZG** and **Dark/Brakdown** achieve the ideal constant-size proofs, while **FRI** and **Virgo** achieve logarithmic or polylogarithmic growth, which is significantly better than linear.
 * **Verification Time**: This is a critical metric for on-chain verification. **KZG** has the fastest, constant-time verification. **Bulletproofs**, **FRI**, and **Gemini** also have very fast logarithmic verification times, while **Dark** and **Virgo** are slightly slower.
 * **Prover Time**: The prover time for all major schemes is quasi-linear, at $O(n \log n)$, so there is little significant difference in this metric.
