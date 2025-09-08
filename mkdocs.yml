@@ -43,6 +43,7 @@ nav:
     - DeVirgo: distributed/devirgo.md
     - DIZK: distributed/dizk.md
     - Pianist: distributed/pianist.md
+    - FRIttata: distributed/frittata.md
   - Space-Efficient ZKP:
     - Space-Efficient ZKP: space-efficient/index.md
     - Gemini: space-efficient/gemini.md
