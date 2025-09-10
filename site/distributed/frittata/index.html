@@ -1069,6 +1069,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FRIttata
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1080,6 +1093,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-fri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed FRI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bivariate-fri-based-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bivariate FRI-based PCS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1253,6 +1321,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-fri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed FRI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bivariate-fri-based-pcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bivariate FRI-based PCS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1271,7 +1383,47 @@
 
 
 <h1 id="frittata">FRIttata<a class="headerlink" href="#frittata" title="Permanent link"></a></h1>
-<p>[^XGBK25] [XGBK25] Xu, H., Gama, M., Beni, E., &amp; Kang, J. (2025). <em>FRIttata: Distributed Proof Generation of FRI-based SNARKs</em>.</p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link"></a></h2>
+<p><strong>Pianist</strong> compiles a distributed IOP into a SNARK with a distributed PCS based on <strong>KZG commitment</strong>. It depends on a trusted setup and CDH on a pairing-friendly group, thus not transparent and not post-quantum (PQ) secure. [<a href="#fn:XGBK25">XGBK25</a>]<span id="fnref:XGBK25"></span> outlines a new distributed PCS based on <strong>FRI (Fast Reed-Solomon Interactive Oracle Proofs of Proximity)</strong> to achieve <strong>transparency</strong> and <strong>plausibly PQ security</strong>.</p>
+<h2 id="distributed-fri">Distributed FRI<a class="headerlink" href="#distributed-fri" title="Permanent link"></a></h2>
+<p>DFRI (Distributed FRI) can be used to delegate the FRI process of <span class="arithmatex">\(M\)</span> functions across <span class="arithmatex">\(M\)</span> machines.</p>
+<ul>
+<li>Each machine holds a function <span class="arithmatex">\(f_i:D\to\mathbb F\)</span>. They commit to <span class="arithmatex">\(f_i\)</span> (with Merkle Tree) and send <span class="arithmatex">\(C_i\)</span> to the master node.</li>
+<li>The master node collects them and sends <span class="arithmatex">\((C_i)^{M-1}_{i=0}\)</span> to the verifier. </li>
+<li>When the verifier wants to open <span class="arithmatex">\((f_i)_{i=0}^{M-1}\)</span> at <span class="arithmatex">\(\alpha\)</span>, the master node sends <span class="arithmatex">\((z_i)^{M-1}_{i=0}\)</span> which is claimed to be <span class="arithmatex">\((f_i(\alpha))_{i=0}^{M-1}\)</span>, together with a proof <span class="arithmatex">\(\pi\)</span>. The verifier can run <span class="arithmatex">\(\mathrm{Verify}_{\mathbf{pp}}((C_i)_{i=0}^{M-1},(z_i)_{i=0}^{M-1},\alpha,\pi)\)</span> to check the evaluations.</li>
+</ul>
+<p>A naive instantiation of DFRI is Parallel FRI.</p>
+<h2 id="bivariate-fri-based-pcs">Bivariate FRI-based PCS<a class="headerlink" href="#bivariate-fri-based-pcs" title="Permanent link"></a></h2>
+<p>This section details how to commit to a bivariate polynomial, which is directly applicable to the Pianist framework. </p>
+<p>We commit to a bivariate polynomial <span class="arithmatex">\(F(X,Y)\)</span> that has a specific structure:</p>
+<div class="arithmatex">\[F(X,Y)=\sum_{i=0}^{M-1}F_i(X)R_i(Y)\]</div>
+<p>where <span class="arithmatex">\(F_i\)</span> is a univariate polynomial and <span class="arithmatex">\(R_i\)</span> is the <strong>Lagrange function</strong> over <span class="arithmatex">\(\mu_M=\{1,\omega,...,\omega^{M-1}\}\)</span>.</p>
+<p>Using DFRI, we can commit to each of the univariate polynomials <span class="arithmatex">\(F_0,...,F_{M-1}\)</span> to get the commitments <span class="arithmatex">\(C_0,...,C_{M-1}\)</span>.</p>
+<p>When the verifier wants to open <span class="arithmatex">\(F(\alpha,\beta)=z\)</span>: </p>
+<ul>
+<li>The prover computes <span class="arithmatex">\(F(\alpha,\beta)=z\)</span>, <span class="arithmatex">\(F_i(\alpha)=z_i\)</span> and <span class="arithmatex">\(Q_i(X)=\frac{F_i(X)-z_i}{X-\alpha}\)</span>. Then he generates a proof <span class="arithmatex">\(\pi\)</span> for <span class="arithmatex">\(Q_0,...,Q_{M-1}\)</span> using DFRI and sends <span class="arithmatex">\((z,(z_i)_{i=0}^{M-1},\pi)\)</span> to the verifier. </li>
+<li>The verifier checks the correctness of <span class="arithmatex">\((z_i)_{i=0}^{M-1}\)</span> with <span class="arithmatex">\(\pi\)</span>, and use them to check the correctness of <span class="arithmatex">\(z\)</span>. A naive method is to directly check <span class="arithmatex">\(z\stackrel{?}{=}F(\alpha,\beta)\)</span> with the fact <span class="arithmatex">\(F(\alpha,\beta)=\sum_{i=0}^{M-1}z_iR_i(\beta)\)</span>. But it would take <span class="arithmatex">\(O(M^2)\)</span> time.</li>
+</ul>
+<p>A more efficient, <span class="arithmatex">\(O(M)\)</span> method is possible. It relies on the polynomial remainder theorem. The claim <span class="arithmatex">\(F(\alpha,\beta)=z\)</span> is equivalent to the statement that a polynomial <span class="arithmatex">\(H\)</span> of degree at most <span class="arithmatex">\(M-2\)</span> exists such that </p>
+<div class="arithmatex">\[F(\alpha,Y)-z=H(Y)(Y-\beta)\]</div>
+<p>Since <span class="arithmatex">\(H\)</span> has degree <span class="arithmatex">\(M-2\)</span>, the verifier can construct <span class="arithmatex">\(H(Y)\)</span> by evaluating it at <span class="arithmatex">\(M-1\)</span> distinct points. A convenient choice is the roots of unity <span class="arithmatex">\(\mu_{M-1} = \{1, \omega, \dots, \omega^{M-2}\}\)</span>. At these points, the evaluations of <span class="arithmatex">\(H(Y)\)</span> are given by:</p>
+<div class="arithmatex">\[h_i = H(\omega^i) = \frac{F(\alpha, \omega^i) - z}{\omega^i - \beta} = \frac{z_i - z}{\omega^i - \beta}\]</div>
+<p>Using these evaluations, the verifier can express <span class="arithmatex">\(H(Y)\)</span> in the Lagrange basis over <span class="arithmatex">\(\mu_{M-1}\)</span>:</p>
+<div class="arithmatex">\[H(Y) = \sum_{i=0}^{M-2} S_i(Y)h_i\]</div>
+<p>What's left is to check that the function <span class="arithmatex">\(H\)</span> does satisfy <span class="arithmatex">\(F(\alpha,Y)-z=H(Y)(Y-\beta)\)</span>. As they have degree <span class="arithmatex">\(M-1\)</span>, we only need to check <span class="arithmatex">\(F(\alpha,Y)-z\)</span> and <span class="arithmatex">\(H(Y)(Y-\beta)\)</span> agree on arbitrary <span class="arithmatex">\(M-1\)</span> points, which we choose <span class="arithmatex">\(\mu_M\)</span>. <span class="arithmatex">\(H(Y)\)</span> was constructed to agree with <span class="arithmatex">\(\frac{F(\alpha,Y)-z}{Y-\beta}\)</span> on <span class="arithmatex">\(\mu_{M-1}=\mu_{M}\backslash\{\omega^{M-1}\}\)</span>, so we only need to check </p>
+<div class="arithmatex">\[F(\alpha,\omega^{M-1})-z=H(\omega^{M-1})(\omega^{M-1}-\beta)\]</div>
+<p>Substituting the known values, we get </p>
+<div class="arithmatex">\[z_{M-1}-z=\sum_{i=0}^{M-2}S_i(\omega^{M-1})h_i\]</div>
+<p>Note that <span class="arithmatex">\(S_i(\omega^{M-1})\)</span> and <span class="arithmatex">\(h_i\)</span> can be precomputed, so the Since the verifier can perform this final check in <span class="arithmatex">\(O(M)\)</span> time, making the overall process efficient.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:XGBK25">
+<p>[XGBK25] Xu, H., Gama, M., Beni, E., &amp; Kang, J. (2025). <em>FRIttata: Distributed Proof Generation of FRI-based SNARKs</em>.&#160;<a class="footnote-backref" href="#fnref:XGBK25" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
