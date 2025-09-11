@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://zksnark-wiki.github.io/distributed/frittata/">
       
       
-        <link rel="prev" href="../pianist/">
+        <link rel="prev" href="../hyperpianist/">
       
       
         <link rel="next" href="../../space-efficient/">
@@ -1057,6 +1057,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../hyperpianist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HyperPianist
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1124,6 +1147,21 @@
       Distributed FRI
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Distributed FRI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instantiations-of-distributed-fri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiations of Distributed FRI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1343,6 +1381,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Distributed FRI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instantiations-of-distributed-fri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiations of Distributed FRI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1392,7 +1445,10 @@
 <li>The master node collects them and sends <span class="arithmatex">\((C_i)^{M-1}_{i=0}\)</span> to the verifier. </li>
 <li>When the verifier wants to open <span class="arithmatex">\((f_i)_{i=0}^{M-1}\)</span> at <span class="arithmatex">\(\alpha\)</span>, the master node sends <span class="arithmatex">\((z_i)^{M-1}_{i=0}\)</span> which is claimed to be <span class="arithmatex">\((f_i(\alpha))_{i=0}^{M-1}\)</span>, together with a proof <span class="arithmatex">\(\pi\)</span>. The verifier can run <span class="arithmatex">\(\mathrm{Verify}_{\mathbf{pp}}((C_i)_{i=0}^{M-1},(z_i)_{i=0}^{M-1},\alpha,\pi)\)</span> to check the evaluations.</li>
 </ul>
-<p>A naive instantiation of DFRI is Parallel FRI.</p>
+<h3 id="instantiations-of-distributed-fri">Instantiations of Distributed FRI<a class="headerlink" href="#instantiations-of-distributed-fri" title="Permanent link"></a></h3>
+<p>A naive instantiation of DFRI is <strong>Parallel FRI</strong>.</p>
+<p>[Che24] proposed another instantiation, <strong>Distributed Batched FRI</strong>.</p>
+<p><strong>Fold-and-Batch</strong> can be seen as an "interpolation" between Parallel FRI and Distributed Batched FRI.</p>
 <h2 id="bivariate-fri-based-pcs">Bivariate FRI-based PCS<a class="headerlink" href="#bivariate-fri-based-pcs" title="Permanent link"></a></h2>
 <p>This section details how to commit to a bivariate polynomial, which is directly applicable to the Pianist framework. </p>
 <p>We commit to a bivariate polynomial <span class="arithmatex">\(F(X,Y)\)</span> that has a specific structure:</p>

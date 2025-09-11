@@ -12,7 +12,13 @@ DFRI (Distributed FRI) can be used to delegate the FRI process of $M$ functions 
 - The master node collects them and sends $(C_i)^{M-1}_{i=0}$ to the verifier. 
 - When the verifier wants to open $(f_i)_{i=0}^{M-1}$ at $\alpha$, the master node sends $(z_i)^{M-1}_{i=0}$ which is claimed to be $(f_i(\alpha))_{i=0}^{M-1}$, together with a proof $\pi$. The verifier can run $\mathrm{Verify}_{\mathbf{pp}}((C_i)_{i=0}^{M-1},(z_i)_{i=0}^{M-1},\alpha,\pi)$ to check the evaluations.
 
-A naive instantiation of DFRI is Parallel FRI.
+### Instantiations of Distributed FRI
+
+A naive instantiation of DFRI is **Parallel FRI**.
+
+\[Che24\] proposed another instantiation, **Distributed Batched FRI**.
+
+**Fold-and-Batch** can be seen as an "interpolation" between Parallel FRI and Distributed Batched FRI.
 
 ## Bivariate FRI-based PCS
 
