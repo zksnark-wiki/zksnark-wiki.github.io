@@ -28,16 +28,14 @@ nav:
     - PCS: pcs/index.md
     - KZG Commitment: pcs/kzg.md
     - IPA Commitment: pcs/ipa.md
+    - Bulletproofs: pcs/bulletproofs.md
+    - Dory: pcs/dory.md
+    - Brakedown: pcs/brakedown.md
   - SNARK:
     - SNARK: snark/index.md
     - Libra: snark/libra.md
     - Virgo: snark/virgo.md
     - Virgo++: snark/virgo++.md
-    # - Groth16: snark/groth16.md
-    # - PLONK: snark/plonk.md
-    # - Sonic: snark/sonic.md
-    # - Marlin: snark/marlin.md
-    # - Halo2: snark/halo2.md
   - Distributed ZKP:
     - Distributed ZKP: distributed/index.md
     - DeVirgo: distributed/devirgo.md
