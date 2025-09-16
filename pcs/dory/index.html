@@ -812,6 +812,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Dory
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -823,6 +836,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-processing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-processing Procedure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Knowledge
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1345,6 +1395,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-processing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-processing Procedure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Knowledge
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1363,6 +1439,40 @@
 
 
 <h1 id="dory">Dory<a class="headerlink" href="#dory" title="Permanent link"></a></h1>
+<h2 id="pre-processing-procedure">Pre-processing Procedure<a class="headerlink" href="#pre-processing-procedure" title="Permanent link"></a></h2>
+<p>Choose a vector of group generators <span class="arithmatex">\(\mathbf g^{(0)}\leftarrow\mathbb G^{n}\)</span>.</p>
+<ol>
+<li><span class="arithmatex">\(\Gamma^{(1)}_1\leftarrow\mathbb G^{n/2}\)</span>, <span class="arithmatex">\(\Delta^{(1)}_L=\langle \mathbf g^{(0)}_L,\Gamma^{(1)}_1\rangle\)</span>, <span class="arithmatex">\(\Delta^{(1)}_R=\langle \mathbf g^{(0)}_R,\Gamma^{(1)}_1\rangle\)</span>.</li>
+<li><span class="arithmatex">\(\Gamma^{(2)}_2\leftarrow\mathbb G^{n/4}\)</span>, <span class="arithmatex">\(\Delta^{(2)}_L=\langle \Gamma^{(1)}_{1,L},\Gamma^{(2)}_2\rangle\)</span>, <span class="arithmatex">\(\Delta^{(2)}_R=\langle \Gamma^{(1)}_{1,R},\Gamma^{(2)}_2\rangle\)</span>.</li>
+<li>...</li>
+</ol>
+<p>The verifier stores all of <span class="arithmatex">\(\Delta^{(i)}_L,\Delta^{(i)}_R\)</span>.</p>
+<h2 id="proof-of-knowledge">Proof of Knowledge<a class="headerlink" href="#proof-of-knowledge" title="Permanent link"></a></h2>
+<ol>
+<li>
+<p>The verifier chooses <span class="arithmatex">\(\alpha_1\leftarrow\mathbb F\)</span>. Claims to be proved: </p>
+<div class="arithmatex">\[\begin{aligned}c_{u^{(1)}}&amp;=\langle u^{(1)},\mathbf g^{(1)}\rangle\\c_{\mathbf g^{(1)}}&amp;=\langle \mathbf g^{(1)},\Gamma^{(1)}_1\rangle\end{aligned}\]</div>
+<p>where <span class="arithmatex">\(u^{(1)}=u^{(0)}_L+\alpha_1 u^{(0)}_R\)</span>, <span class="arithmatex">\(\mathbf g^{(1)}=\mathbf g^{(0)}_L+\alpha_1^{-1}\mathbf g^{(0)}_R\)</span>. The verifier computes <span class="arithmatex">\(c_{\mathbf g^{(1)}}\)</span> by</p>
+<div class="arithmatex">\[c_{\mathbf g^{(1)}}=\Delta^{(1)}_L+\alpha_1^{-1}\Delta^{(1)}_R\]</div>
+<p>and <span class="arithmatex">\(c_{u^{(1)}}\)</span> by </p>
+<div class="arithmatex">\[c_{u^{(1)}}=c_{u^{(0)}}+\alpha_1^{-1}\langle u^{(0)}_L,\mathbf g^{(0)}_R\rangle+\alpha_1\langle u^{(0)}_R,\mathbf g^{(0)}_L\rangle\]</div>
+<p>where the cross terms are sent by the prover.</p>
+</li>
+<li>
+<p>The verifier chooses <span class="arithmatex">\(\alpha_2\leftarrow\mathbb F\)</span>. Claims to be proved: </p>
+<div class="arithmatex">\[\begin{aligned}c_{u^{(2)}}&amp;=\langle u^{(2)},\mathbf g^{(2)}\rangle\\c_{\mathbf g^{(2)}}&amp;=\langle \mathbf g^{(2)},\Gamma^{(2)}_1\rangle\\c_{\Gamma^{(2)}_1}&amp;=\langle\Gamma^{(2)}_1,\Gamma^{(2)}_2\rangle\end{aligned}\]</div>
+<p>where <span class="arithmatex">\(\Gamma^{(2)}_1=\Gamma^{(1)}_{1,L}+\alpha_2\Gamma^{(1)}_{1,R}\)</span>. The verifier computes <span class="arithmatex">\(c_{\Gamma^{(2)}_1}\)</span> by</p>
+<div class="arithmatex">\[c_{\Gamma^{(2)}_1}=\Delta^{(2)}_L+\alpha_2\Delta^{(2)}_R\]</div>
+<p>and the other two by the cross terms sent by the prover.</p>
+</li>
+<li>
+<p>The verifier chooses <span class="arithmatex">\(\alpha_3\leftarrow\mathbb F\)</span>. Claims to be proved:</p>
+<div class="arithmatex">\[\begin{aligned}c_{u^{(3)}}&amp;=\langle u^{(3)},\mathbf g^{(3)}\rangle\\c_{\mathbf g^{(3)}}&amp;=\langle \mathbf g^{(3)},\Gamma^{(3)}_1\rangle\\c_{\Gamma^{(3)}_1}&amp;=\langle\Gamma^{(3)}_1,\Gamma^{(3)}_2\rangle\\c_{\Gamma_{2}^{(3)}}&amp;=\langle\Gamma^{(3)}_2,\Gamma^{(3)}_3\rangle\end{aligned}\]</div>
+</li>
+<li>
+<p>...</p>
+</li>
+</ol>
 
 
 
