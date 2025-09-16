@@ -22,5 +22,5 @@ We can just replace the random vector $r$ in the commitment phase with $b$.
 
 | | Commitment Size | Proof Size | Verifier Time | Prover Time |
 | :---: | :---: | :---: | :---: | :---: |
-| Ligero | $1$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n\log n)$ |
-| Brakedown | $1$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n)$ |
+| Ligero | $O(1)$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n\log n)$ |
+| Brakedown | $O(1)$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n)$ |

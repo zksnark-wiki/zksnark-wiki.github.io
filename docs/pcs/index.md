@@ -29,36 +29,19 @@ Polynomials come in different forms, and PCS are often classified by the type th
 * **Multilinear Polynomials:** A multilinear polynomial is a special type of polynomial with multiple variables, where each variable appears with a power of at most 1. They are often used to represent logical circuits or computations. Schemes like the **FRI** are designed to handle these types of polynomials efficiently.
 
 ---
-## Popular PCS Examples
-
-There are a few widely-used PCS, each with its own trade-offs. The main difference often comes down to their efficiency and whether they need a **trusted setup**. A trusted setup is a one-time cryptographic event that generates public parameters. If this event is compromised, the entire system's security can be at risk.
-
-### **KZG (Kate-Zaverucha-Goldberg) Commitments**
-
-* **Pros:** They are incredibly efficient. Both the proof size and the verification time are constant, meaning they stay the same no matter how large the polynomial is.
-* **Cons:** They require a trusted setup. This has led to high-profile ceremonies like the one for the Zcash network, where many people participate to ensure no single party holds the secret.
-
-### **IPA (Inner Product Argument) Commitments**
-
-* **Pros:** They do **not** require a trusted setup, which is a massive security benefit. They rely on more common cryptographic assumptions.
-* **Cons:** They are less efficient than KZG. The proof size and verification time grow logarithmically with the size of the polynomial, which is still very fast but not constant.
-
-
----
 
 ## Comparing
 
-| Scheme Name | Commitment Size | Proof Size | Verification Time | Prover Time | Trusted Setup | Security Assumption | Core Technique | Advantages | Disadvantages |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **KZG**(U)[^1]  | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Bilinear Pairings | Small proofs, fast verification | Relies on a trusted setup |
-| **FRI** [^3] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Collision resistance of hash functions | Iterative low-degree testing | Fully transparent, post-quantum secure | Relatively large proofs, high verification cost |
-| **IPA** [^4] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument, Fiat-Shamir | No trusted setup, logarithmic proof size | Can be slower than KZG for large n |
-| **Bulletproofs** [^2] [^9] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | Discrete Logarithm (DL) problem | Inner Product Argument | No trusted setup, small proof size | Slower verification than KZG |
-| **Dory** | | $O(\log n)$ | $O(\log n)$ | $O(n)$ | **Not required** | | | | |
-| **Hyrax** [^5] | | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | Vector commitments, inner product arguments | No trusted setup, fast verification | Relies on specific assumptions |
-| **Brakedown** [^6] | | $O(1)$ | $O(n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Batching techniques | Constant-size proofs without trusted setup | Linear verification time |
-| **Gemini** [^7] | | $O(1)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Polynomial combination for batching | Combines KZG and FRI advantages | Relatively complex protocol |
-| **Virgo** [^8] | | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Polylogarithmic inner product argument | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
+| Scheme Name | Commitment Size | Proof Size | Verification Time | Prover Time | Trusted Setup | Security Assumption | Advantages | Disadvantages |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **KZG**(U)[^1]  | $O(1)$ | $O(1)$ | $O(1)$ | $O(n)$ | **Required** | CDH on Pairing-friendly curves | Small proofs, fast verification | Relies on a trusted setup |
+| **FRI** [^3] | | $O(\log n)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | Collision resistance of hash functions | Fully transparent, post-quantum secure | Relatively large proofs, high verification cost |
+| **Bulletproofs**(U) [^4] [^2] [^9] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | CDH | No trusted setup, small proof size | Slower verification than KZG |
+| **Dory**(U) | $O(1)$ | $O(\log n)$ | $O(\log n)$ | $O(n)$ | **Not required** | CDH | | | |
+| **Hyrax** [^5] | | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | No trusted setup, fast verification | Relies on specific assumptions |
+| **Ligero/Brakedown**(U) [^6] |$O(1)$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n\log n)$/$O(n)$ | **Not required** | Hash | Constant-size proofs without trusted setup | Linear verification time |
+| **Gemini** [^7] | | $O(1)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Combines KZG and FRI advantages | Relatively complex protocol |
+| **Virgo** [^8] | | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
 
 ### Key Metrics Explained
 

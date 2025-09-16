@@ -27,7 +27,7 @@ nav:
   - PCS:
     - PCS: pcs/index.md
     - KZG Commitment: pcs/kzg.md
-    - IPA Commitment: pcs/ipa.md
+    - FRI Commitment: pcs/fri.md
     - Bulletproofs: pcs/bulletproofs.md
     - Dory: pcs/dory.md
     - Brakedown: pcs/brakedown.md

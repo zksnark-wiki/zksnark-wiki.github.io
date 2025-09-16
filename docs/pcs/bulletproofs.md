@@ -1,5 +1,14 @@
 # Bulletproofs
 
+## Inner Product Argument
+
+The prover sends a group element $C_P$ and convinces the verifier that he knows vectors $\mathbf a$ and $\mathbf b$ such that they have the inner product $\langle\textbf{a}, \textbf{b}\rangle = z$, and satisfy $C_P = \langle\textbf{a}, \textbf{G}\rangle + \langle\textbf{b}, \textbf{H}\rangle$.
+
+- **Public input:** a cyclic additive group $\mathbb{G}$ of prime order $q$ and $2n$ random $\mathbb{G}$ generators
+    $\textbf{G} = (G_1, ..., G_n)$ and $\textbf{H} = (H_1, ..., H_n)$; vector commitment $C_P \in \mathbb{G}$ and scalar $z \in \mathbb{Z}_q$.
+- **Private input:** Prover knows vectors $\textbf{a}, \textbf{b} \in \mathbb{Z}_q^n$ that satisfy the vector commitment
+    $C_P = \langle\textbf{a}, \textbf{G}\rangle + \langle\textbf{b}, \textbf{H}\rangle$, and have the inner product $z = \langle\textbf{a}, \textbf{b}\rangle$.
+
 ## Argument of Knowledge
 
 1. Let $G$ be an **additive** cyclic group of prime order $p$ over which the Discrete Logarithm relation is hard, with vector of generators $\mathbf{g} = (g_1, \dots, g_n)$.
@@ -22,4 +31,9 @@
 
 | | Commitment Size | Proof Size | Verifier Time | Prover Time |
 | :---: | :---: | :---: | :---: | :---: |
-| Bulletproofs | $1$ | $O(\log n)$ | $O(n)$ | $O(n)$ |
+| Bulletproofs | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ |
+
+## Reference
+
+[^BBB+18]: Bünz, M., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., & Maxwell, G. (2018). *Bulletproofs: Short proofs for confidential transactions and more*.
+[^BDFG21]: Boneh, D., Drake, J., Fisch, B., & Gabizon, A. (2021). *Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme*.

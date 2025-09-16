@@ -41,3 +41,13 @@ The verifier stores all of $\Delta^{(i)}_L,\Delta^{(i)}_R$.
     $$\begin{aligned}c_{u^{(3)}}&=\langle u^{(3)},\mathbf g^{(3)}\rangle\\c_{\mathbf g^{(3)}}&=\langle \mathbf g^{(3)},\Gamma^{(3)}_1\rangle\\c_{\Gamma^{(3)}_1}&=\langle\Gamma^{(3)}_1,\Gamma^{(3)}_2\rangle\\c_{\Gamma_{2}^{(3)}}&=\langle\Gamma^{(3)}_2,\Gamma^{(3)}_3\rangle\end{aligned}$$
 
 4.  ...
+
+## Reducing Pre-Processing Time
+
+## Achieving $O(\log n)$ verification time
+
+## Performance
+
+| | Commitment Size | Proof Size | Verifier Time | Prover Time |
+| :---: | :---: | :---: | :---: | :---: |
+| Dory | $1$ | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
