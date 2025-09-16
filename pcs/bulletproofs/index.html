@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://zksnark-wiki.github.io/pcs/bulletproofs/">
       
       
-        <link rel="prev" href="../ipa/">
+        <link rel="prev" href="../fri/">
       
       
         <link rel="next" href="../dory/">
@@ -757,12 +757,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ipa/" class="md-nav__link">
+      <a href="../fri/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    IPA Commitment
+    FRI Commitment
     
   </span>
   
@@ -830,6 +830,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inner-product-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inner Product Argument
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#argument-of-knowledge" class="md-nav__link">
     <span class="md-ellipsis">
       Argument of Knowledge
@@ -851,6 +860,15 @@
   <a href="#performance" class="md-nav__link">
     <span class="md-ellipsis">
       Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
     </span>
   </a>
   
@@ -1411,6 +1429,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inner-product-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inner Product Argument
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#argument-of-knowledge" class="md-nav__link">
     <span class="md-ellipsis">
       Argument of Knowledge
@@ -1437,6 +1464,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1457,6 +1493,14 @@
 
 
 <h1 id="bulletproofs">Bulletproofs<a class="headerlink" href="#bulletproofs" title="Permanent link"></a></h1>
+<h2 id="inner-product-argument">Inner Product Argument<a class="headerlink" href="#inner-product-argument" title="Permanent link"></a></h2>
+<p>The prover sends a group element <span class="arithmatex">\(C_P\)</span> and convinces the verifier that he knows vectors <span class="arithmatex">\(\mathbf a\)</span> and <span class="arithmatex">\(\mathbf b\)</span> such that they have the inner product <span class="arithmatex">\(\langle\textbf{a}, \textbf{b}\rangle = z\)</span>, and satisfy <span class="arithmatex">\(C_P = \langle\textbf{a}, \textbf{G}\rangle + \langle\textbf{b}, \textbf{H}\rangle\)</span>.</p>
+<ul>
+<li><strong>Public input:</strong> a cyclic additive group <span class="arithmatex">\(\mathbb{G}\)</span> of prime order <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(2n\)</span> random <span class="arithmatex">\(\mathbb{G}\)</span> generators
+    <span class="arithmatex">\(\textbf{G} = (G_1, ..., G_n)\)</span> and <span class="arithmatex">\(\textbf{H} = (H_1, ..., H_n)\)</span>; vector commitment <span class="arithmatex">\(C_P \in \mathbb{G}\)</span> and scalar <span class="arithmatex">\(z \in \mathbb{Z}_q\)</span>.</li>
+<li><strong>Private input:</strong> Prover knows vectors <span class="arithmatex">\(\textbf{a}, \textbf{b} \in \mathbb{Z}_q^n\)</span> that satisfy the vector commitment
+    <span class="arithmatex">\(C_P = \langle\textbf{a}, \textbf{G}\rangle + \langle\textbf{b}, \textbf{H}\rangle\)</span>, and have the inner product <span class="arithmatex">\(z = \langle\textbf{a}, \textbf{b}\rangle\)</span>.</li>
+</ul>
 <h2 id="argument-of-knowledge">Argument of Knowledge<a class="headerlink" href="#argument-of-knowledge" title="Permanent link"></a></h2>
 <ol>
 <li>Let <span class="arithmatex">\(G\)</span> be an <strong>additive</strong> cyclic group of prime order <span class="arithmatex">\(p\)</span> over which the Discrete Logarithm relation is hard, with vector of generators <span class="arithmatex">\(\mathbf{g} = (g_1, \dots, g_n)\)</span>.</li>
@@ -1489,13 +1533,25 @@
 <tbody>
 <tr>
 <td style="text-align: center;">Bulletproofs</td>
-<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 </tbody>
 </table>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link"></a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:BBB+18">
+<p>Bünz, M., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., &amp; Maxwell, G. (2018). <em>Bulletproofs: Short proofs for confidential transactions and more</em>.&#160;<a class="footnote-backref" href="#fnref:BBB+18" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:BDFG21">
+<p>Boneh, D., Drake, J., Fisch, B., &amp; Gabizon, A. (2021). <em>Halo Infinite: Recursive zk-SNARKs from any Additive Polynomial Commitment Scheme</em>.&#160;<a class="footnote-backref" href="#fnref:BDFG21" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
