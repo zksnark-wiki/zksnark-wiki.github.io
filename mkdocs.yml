@@ -36,6 +36,7 @@ nav:
     - Libra: snark/libra.md
     - Virgo: snark/virgo.md
     - Virgo++: snark/virgo++.md
+    - Plookup: snark/plookup.md
   - Distributed ZKP:
     - Distributed ZKP: distributed/index.md
     - DeVirgo: distributed/devirgo.md

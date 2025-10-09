@@ -39,7 +39,7 @@ Polynomials come in different forms, and PCS are often classified by the type th
 | **Bulletproofs**(U) [^4] [^2] [^9] | $O(1)$ | $O(\log n)$ | $O(n)$ | $O(n)$ | **Not required** | CDH | No trusted setup, small proof size | Slower verification than KZG |
 | **Dory**(U) | $O(1)$ | $O(\log n)$ | $O(\log n)$ | $O(n)$ | **Not required** | CDH | | | |
 | **Hyrax** [^5] | | $O(\log n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | DL and Strong RSA assumptions | No trusted setup, fast verification | Relies on specific assumptions |
-| **Ligero/Brakedown**(U) [^6] |$O(1)$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n\log n)$/$O(n)$ | **Not required** | Hash | Constant-size proofs without trusted setup | Linear verification time |
+| **Ligero/Brakedown**(U) [^6] |$O(1)$ | $O(\sqrt n)$ | $O(\sqrt n)$ | $O(n\log n)$/$O(n)$ | **Not required** | Hashing | Constant-size proofs without trusted setup | Linear verification time |
 | **Gemini** [^7] | | $O(1)$ | $O(\log n)$ | $O(n \log n)$ | **Not required** | DL and higher-order DL assumptions | Combines KZG and FRI advantages | Relatively complex protocol |
 | **Virgo** [^8] | | $O(\log^2 n)$ | $O(\log^2 n)$ | $O(n \log n)$ | **Not required** | Vector polynomial delegation | No trusted setup, post-quantum secure | Proof and verification time are not constant |
 
